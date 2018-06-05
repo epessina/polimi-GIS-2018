@@ -4,72 +4,168 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Title</title>
+
+    <!-- Font -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+
+    <!-- Bootstrap 4 -->
     <link rel="stylesheet" href="assets/bootstrap-4.0.0-dist/css/bootstrap.css">
+
+    <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-md navbar-dark fixed-top navbar-no-bg">
+<!-- Navigation bar -->
+<div class="nav-menu fixed-top">
 
     <div class="container">
 
-        <a class="navbar-brand" href="index.html">GIS project</a>
+        <div class="row">
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="col-md-12">
 
-            <span class="navbar-toggler-icon"></span>
+                <nav class="navbar navbar-dark navbar-expand-md">
 
-        </button>
+                    <a class="navbar-brand" href="index.html">GIS Project <span>01</span></a>
 
-        <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                            aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-            <ul class="navbar-nav ml-auto">
+                    <div class="collapse navbar-collapse" id="navbar">
 
-                <li class="nav-item active">
-                    <a class="nav-link"  id="current" href="#">HOME<span class="sr-only">(current)</span></a>
-                </li>
+                        <ul class="navbar-nav ml-auto">
 
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">PROJECT</a>
-                </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">HOME<span class="sr-only">(current)</span></a>
+                            </li>
 
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">WEBGIS</a>
-                </li>
+                            <li class="nav-item"><a class="nav-link" href="#">PROJECT</a></li>
 
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">ABOUT US</a>
-                </li>
+                            <li class="nav-item"><a class="nav-link" href="#">WEBGIS</a></li>
 
-            </ul>
+                            <li class="nav-item"><a class="nav-link" href="pages/about-us.html">ABOUT US</a></li>
+
+                            <li class="nav-item">
+                                <a href="#" class="btn btn-outline-light my-3 my-sm-0 ml-lg-3">Download</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </nav>
+
+            </div>
 
         </div>
 
     </div>
 
-</nav>
-
-<div id="landing-header">
-
-    <h1>GIS Project</h1>
-
 </div>
 
-<ul class="slideshow">
+<!-- Hero -->
+<header class="hero">
 
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+    <div class="container" style="margin-top: 10%">
 
-</ul>
+        <h1 class="hero-text">GIS Project <span>01</span></h1>
 
+        <p class="tagline">
+            Harmonizing data flows in Energy Saving EU policies for Sondrio province.
+        </p>
+
+        <div style="height: 500px"></div>
+
+    </div>
+
+</header>
+
+<!-- Main technologies -->
+<section class="section-padding">
+
+    <div class="container">
+
+        <!-- Title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading text-center">
+                    <h2>Main Technologies</h2>
+                    <div class="line-shape"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technologies -->
+        <div class="row">
+
+            <div class="col-3">
+                <div class="tech">
+                    <a href="https://www.qgis.org/it/site/" target="_blank">
+                        <div class="tech-icon">
+                            <img src="assets/img/icon_qgis.png">
+                        </div>
+                        <h4>QGIS</h4>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="tech">
+                    <a href="http://geoserver.org/" target="_blank">
+                        <div class="tech-icon">
+                            <img src="assets/img/icon_geoserver.png">
+                        </div>
+                        <h4>GeoServer</h4>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="tech">
+                    <a href="https://openlayers.org/" target="_blank">
+                        <div class="tech-icon">
+                            <img src="assets/img/icon_openlayers.png">
+                        </div>
+                        <h4>OpenLayers</h4>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="tech">
+                    <a href="https://www.wetransform.to/products/halestudio/" target="_blank">
+                        <div class="tech-icon">
+                            <img src="assets/img/icon_halestudio.png">
+                        </div>
+                        <h4>hale STUDIO</h4>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- jQuery -->
 <script src="assets/js/lib/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+<!-- Popper -->
 <script src="assets/js/lib/popper.min.js" type="text/javascript"></script>
+
+<!-- bootstrap -->
 <script src="assets/bootstrap-4.0.0-dist/js/bootstrap.js" type="text/javascript"></script>
+
+<!-- Main JS-->
+<script src="./assets/js/script.js" type="text/javascript"></script>
+
 </body>
 
 </html>

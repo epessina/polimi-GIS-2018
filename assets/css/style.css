@@ -1,116 +1,208 @@
+@charset "UTF-8";
+
+/***********************************************************************************************************************
+GLOBAL STYLES
+***********************************************************************************************************************/
+
 body {
-    background-color: black;
+    font-family: 'Rubik', sans-serif;
+    position: relative;
 }
 
-.navbar-no-bg {
-    padding-top: 10px;
-    background: none;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
+.gray-bg {
+    background-color: #f8fef2;
 }
 
-.navbar-toggler {
-     border: none;
-     outline: none;
+.section-padding {
+    padding: 100px 0;
 }
 
-.navbar-toggler:focus {
-    border: none;
-    outline: none;
+.section-heading {
+    margin-bottom: 80px;
 }
 
-.navbar-nav > li{
-    padding-left: 30px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+.section-heading > h2 {
+    font-weight: 300;
+    color: #000000;
+    font-size: 48px;
+    margin: 0;
 }
 
-@media screen and (max-width: 767px) {
-    .navbar-nav > li{
-        padding: 3px 0;
-        margin: 0 auto;
+.line-shape-white,
+.line-shape {
+    width: 80px;
+    height: 2px;
+    background-color: #595959;
+    margin-top: 15px;
+}
+
+.line-shape {
+    margin-left: calc(50% - 40px);
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width:767px) {
+    h1 {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 30px;
     }
 }
 
-.navbar-dark .navbar-nav .active > .nav-link {
-    color: #e1fff0;
+.btn {
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 0.375rem 1.35rem;
+    transition: all 0.3s ease;
 }
 
-#current {
-    color: white;
-    font-weight: 500;
+.btn-outline-light:hover {
+    color: #4e4d4d;
 }
 
-#landing-header {
-    z-index: 1;
-    position: relative;
-    text-align: center;
-    padding-top: 40vh;
+/***********************************************************************************************************************
+NAVBAR STYLE
+***********************************************************************************************************************/
+
+.navbar-brand {
+    font-size: 1.50rem;
 }
 
-#landing-header h1 {
-    color: white;
+.navbar-brand span {
+    font-size: 1.10rem;
 }
 
-.slideshow {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    list-style: none;
-    margin: 0;
+.nav-menu {
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+    /*background-color: black;*/
+}
+
+.nav-menu.is-scrolling,
+.nav-menu.menu-is-open {
+    background-color: #4e4d4d;
+    -webkit-box-shadow: 0 5px 23px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 5px 23px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 23px 0 rgba(0, 0, 0, 0.1);
+}
+
+.nav-menu.is-scrolling {
     padding: 0;
 }
 
-.slideshow li {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+.navbar-nav .nav-link {
+    position: relative;
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-md .navbar-nav .nav-link {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .navbar-nav > .nav-item > .nav-link.active:after {
+        content: "";
+        border-bottom: 2px solid white;
+        left: 1rem;
+        right: 1rem;
+        bottom: 5px;
+        height: 1px;
+        position: absolute;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar-nav.is-scrolling {
+        padding-bottom: 1rem;
+    }
+
+    .navbar-nav .nav-item {
+        text-align: center;
+    }
+}
+
+/***********************************************************************************************************************
+HERO
+***********************************************************************************************************************/
+
+header {
+    padding: 100px 0 0;
+    color: #fff;
+}
+
+.hero {
+    height: 900px;
+    position: relative;
+    z-index: 1;
+    background: url(../img/hero3.png) bottom center;
     background-size: cover;
-    background: no-repeat 50% 50%;
-    opacity: 0;
-    z-index: 0;
-    animation: imageAnimation 50s linear infinite;
 }
 
-.slideshow li:nth-child(1) {
-    background-image: url(http://i.imgur.com/K3mPv14.jpg)
-}
-.slideshow li:nth-child(2) {
-    background-image: url(http://i.imgur.com/SBEmFpv.jpg);
-    animation-delay: 10s;
-}
-.slideshow li:nth-child(3) {
-    background-image: url(http://i.imgur.com/emvhOnb.jpg);
-    animation-delay: 20s;
-}
-.slideshow li:nth-child(4) {
-    background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
-    animation-delay: 30s;
-}
-.slideshow li:nth-child(5) {
-    background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
-    animation-delay: 40s;
+.hero-text {
+    font-size: 100px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    margin-bottom: 2.5rem;
 }
 
-@keyframes imageAnimation {
-    0% {
-        opacity: 0;
-        animation-timing-function: ease-in;
-    }
-    10% {
-        opacity: 1;
-        animation-timing-function: ease-out;
-    }
-    20% {
-        opacity: 1
-    }
-    30% {
-        opacity: 0
-    }
+.hero-text span {
+    font-size: 60px;
+}
+
+.tagline {
+    font-size: 25px;
+    font-weight: 300;
+    color: #d1d1d1;
+}
+
+
+/***********************************************************************************************************************
+MAIN TECHNOLOGIES
+***********************************************************************************************************************/
+
+.tech {
+    text-align: center;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    -webkit-transform: translateY(0);
+    transform: translateY(0)
+}
+
+.tech:hover {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px)
+}
+
+.tech .tech-icon {
+    height: 70px;
+    margin-bottom: 30px;
+}
+
+.tech .tech-icon img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.tech:hover .tech-icon img {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0)
+}
+
+.tech h4 {
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+.tech a {
+   color: black;
 }
