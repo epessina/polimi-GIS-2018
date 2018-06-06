@@ -14,7 +14,7 @@ body {
 }
 
 .section-padding {
-    padding: 100px 0;
+    padding: 100px 0 0 0;
 }
 
 .section-heading {
@@ -47,10 +47,11 @@ h1 {
     margin-bottom: 1.5rem;
 }
 
-@media (max-width:767px) {
+@media (max-width: 767px) {
     h1 {
         font-size: 40px;
     }
+
     h2 {
         font-size: 30px;
     }
@@ -83,7 +84,6 @@ NAVBAR STYLE
 .nav-menu {
     padding: 1rem 0;
     transition: all 0.3s ease;
-    /*background-color: black;*/
 }
 
 .nav-menu.is-scrolling,
@@ -163,6 +163,97 @@ header {
     color: #d1d1d1;
 }
 
+/***********************************************************************************************************************
+PAGES HEADER
+***********************************************************************************************************************/
+
+.header-bg {
+    height: 450px;
+    background: #134E5E;
+    background: -webkit-linear-gradient(to right, #71B280, #134E5E);
+    background: linear-gradient(to right, #71B280, #134E5E);
+}
+
+.header-content {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.header-content h1 {
+    font-size: 80px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+}
+
+.line-shape-heading {
+    width: 200px;
+    height: 4px;
+    background-color: white;
+    margin-top: 15px;
+}
+
+.line-shape-heading {
+    margin-left: calc(50% - 100px);
+}
+
+/***********************************************************************************************************************
+FOOTER
+***********************************************************************************************************************/
+
+footer {
+    margin-top: 150px;
+    text-align: center;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.footer-bg {
+    background: #134E5E;
+    background: -webkit-linear-gradient(to left, #71B280, #134E5E);
+    background: linear-gradient(to left, #71B280, #134E5E);
+}
+
+.footer-bg h3 {
+    color: white;
+    padding-top: 50px;
+    font-size: 40px;
+}
+
+.contacts {
+    padding-top: 40px;
+}
+
+.contacts i {
+    font-size: 25px;
+}
+
+.contacts a {
+    color: white;
+}
+
+.contact {
+    color: white;
+    font-size: 17px;
+    padding-top: 15px;
+}
+
+.socials {
+    padding: 25px 0 70px 0;
+}
+
+.socials a {
+    margin: 0 20px;
+    color: #DFDFDF;
+}
+
+.socials a :hover {
+    color: white;
+}
+
+.socials i {
+    font-size: 40px;
+}
 
 /***********************************************************************************************************************
 MAIN TECHNOLOGIES
@@ -204,5 +295,5 @@ MAIN TECHNOLOGIES
 }
 
 .tech a {
-   color: black;
+    color: black;
 }
