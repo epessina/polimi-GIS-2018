@@ -5,7 +5,7 @@ var OSM = new ol.layer.Tile({
     visible: true,
     source: new ol.source.OSM()
 });
-/*
+
 var bingRoads = new ol.layer.Tile({
     title: 'Bing Maps - Roads',
     type: 'base',
@@ -53,7 +53,7 @@ var stamenToner = new ol.layer.Tile({
         layer: 'toner'
     })
 });
-*/
+
 /*
 var geojsonFormat = new ol.format.GeoJSON();
 
@@ -78,7 +78,7 @@ var map = new ol.Map({
     layers: [
         new ol.layer.Group({
             title: 'Basemaps',
-            layers: [OSM]
+            layers: [OSM, stamenToner, stamenWatercolor, bingAerial, bingAerialWithLabels, bingRoads]
         })/*,
           new ol.layer.Group({
             title: 'Overlay Layers',
