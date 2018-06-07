@@ -72,7 +72,7 @@ var ECU_rails = new ol.layer.Vector({
     })
 });
 */
- /* Add map */
+/* Add map */
 var map = new ol.Map({
     target: document.getElementById('map'),
     layers: [
@@ -85,8 +85,10 @@ var map = new ol.Map({
             layers: []
         })*/
     ],
-    view: new ol.View({center: ol.proj.fromLonLat([9.87, 46.17]),
-        zoom: 16}),
+    view: new ol.View({
+        center: ol.proj.fromLonLat([9.87, 46.17]),
+        zoom: 16
+    }),
     controls: ol.control.defaults().extend([
         new ol.control.ScaleLine(),
         new ol.control.FullScreen(),
@@ -126,7 +128,7 @@ map.on('click', function(event) {
 });
 */
 
-map.on('pointermove', function(e) {
+map.on('pointermove', function (e) {
     if (e.dragging) {
         $(elementPopup).popover('destroy');
         return;
@@ -136,12 +138,12 @@ map.on('pointermove', function(e) {
     map.getTarget().style.cursor = hit ? 'pointer' : '';
 });
 
-
-map.on('click', function(event) {
+/*
+map.on('click', function (event) {
     document.getElementById('get-feature-info').innerHTML = '';
     var viewResolution = (map.getView().getResolution());
     var url = ECU_roads.getSource().getGetFeatureInfoUrl(event.coordinate,
         viewResolution, 'EPSG:3857', {'INFO_FORMAT': 'text/html'});
     if (url)
         document.getElementById('get-feature-info').innerHTML = '<iframe seamless src="' + url + '"></iframe>';
-});
+});*/
