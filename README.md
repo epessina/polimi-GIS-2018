@@ -4,9 +4,9 @@ This repository contains the project of the course *Geographic Information Syste
 The project, including documentation, is in English.
 
 ### Group members ###
-| Name and Surname  | Matricola   | Email                           |
-|-------------------|:-----------:|---------------------------------|
-| Edoardo Pessina   | 905514      | edoardo2.pessina@mail.polimi.it |
-| Mathias Vestgaard | 8           | ??                              |
-| Lorenzo Stucchi   | 899072      | lorenzo.stucchi@mail.polimi.it  |
+| Name and Surname  | Matricola   | Email                                  |
+|-------------------|:-----------:|----------------------------------------|
+| Edoardo Pessina   | 905514      | edoardo2.pessina@mail.polimi.it        |
+| Mathias Vestgaard | 894889      | mathiasundehim.vestgard@mail.polimi.it |
+| Lorenzo Stucchi   | 899072      | lorenzo.stucchi@mail.polimi.it  	   |
 
