@@ -79,7 +79,7 @@ var map = new ol.Map({
     layers: [
         new ol.layer.Group({
             title: 'Basemaps',
-            layers: [OSM, stamenToner, stamenWatercolor, bingAerial, bingAerialWithLabels, bingRoads]
+            layers: [OSM, stamenToner, bingAerialWithLabels, bingRoads]
         })/*,
           new ol.layer.Group({
             title: 'Overlay Layers',
