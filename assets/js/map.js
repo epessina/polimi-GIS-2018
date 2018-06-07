@@ -15,7 +15,7 @@ var bingRoads = new ol.layer.Tile({
         imagerySet: 'Road'
     })
 });
-
+/*
 var bingAerial = new ol.layer.Tile({
     title: 'Bing Maps - Aerial',
     type: 'base',
@@ -25,7 +25,7 @@ var bingAerial = new ol.layer.Tile({
         imagerySet: 'Aerial'
     })
 });
-
+*/
 var bingAerialWithLabels = new ol.layer.Tile({
     title: 'Bing Maps - Aerial with Labels',
     type: 'base',
@@ -36,7 +36,7 @@ var bingAerialWithLabels = new ol.layer.Tile({
     })
 });
 
-
+/*
 var stamenWatercolor = new ol.layer.Tile({
     title: 'Stamen Watercolor',
     type: 'base',
@@ -45,6 +45,7 @@ var stamenWatercolor = new ol.layer.Tile({
         layer: 'watercolor'
     })
 });
+*/
 var stamenToner = new ol.layer.Tile({
     title: 'Stamen Toner',
     type: 'base',
