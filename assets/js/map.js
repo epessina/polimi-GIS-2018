@@ -5,7 +5,7 @@ var OSM = new ol.layer.Tile({
     visible: true,
     source: new ol.source.OSM()
 });
-
+/*
 var bingRoads = new ol.layer.Tile({
     title: 'Bing Maps - Roads',
     type: 'base',
@@ -36,6 +36,7 @@ var bingAerialWithLabels = new ol.layer.Tile({
     })
 });
 
+
 var stamenWatercolor = new ol.layer.Tile({
     title: 'Stamen Watercolor',
     type: 'base',
@@ -52,6 +53,7 @@ var stamenToner = new ol.layer.Tile({
         layer: 'toner'
     })
 });
+*/
 /*
 var geojsonFormat = new ol.format.GeoJSON();
 
@@ -76,15 +78,15 @@ var map = new ol.Map({
     layers: [
         new ol.layer.Group({
             title: 'Basemaps',
-            layers: [OSM, bingAerial, bingRoads, bingAerialWithLabels, stamenToner, stamenWatercolor]
+            layers: [OSM]
         })/*,
           new ol.layer.Group({
             title: 'Overlay Layers',
-            layers: [ECU_tourismMap, ECU_SRTM, remoteWMS, ECU_adm0, ECU_adm1, ECU_roads, ECU_water_lines, ECU_rails]
-        }) */
+            layers: []
+        })*/
     ],
-    view: new ol.View({center: ol.proj.fromLonLat([-84, -2]),
-        zoom: 6}),
+    view: new ol.View({center: ol.proj.fromLonLat([9.87, 46.17]),
+        zoom: 16}),
     controls: ol.control.defaults().extend([
         new ol.control.ScaleLine(),
         new ol.control.FullScreen(),
@@ -134,7 +136,7 @@ map.on('pointermove', function(e) {
     map.getTarget().style.cursor = hit ? 'pointer' : '';
 });
 
-/*
+
 map.on('click', function(event) {
     document.getElementById('get-feature-info').innerHTML = '';
     var viewResolution = (map.getView().getResolution());
@@ -142,4 +144,4 @@ map.on('click', function(event) {
         viewResolution, 'EPSG:3857', {'INFO_FORMAT': 'text/html'});
     if (url)
         document.getElementById('get-feature-info').innerHTML = '<iframe seamless src="' + url + '"></iframe>';
-}); */
+});
