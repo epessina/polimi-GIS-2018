@@ -7,6 +7,6 @@ The project, including documentation, is in English.
 | Name and Surname  | Matricola   | Email                           |
 |-------------------|:-----------:|---------------------------------|
 | Edoardo Pessina   | 905514      | edoardo2.pessina@mail.polimi.it |
-| Mathias Vestgaard | ??          | ??                              |
+| Mathias Vestgaard | 8           | ??                              |
 | Lorenzo Stucchi   | 899072      | lorenzo.stucchi@mail.polimi.it  |
 
