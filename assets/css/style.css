@@ -324,3 +324,21 @@ MAIN TECHNOLOGIES
 .tech a {
     color: black;
 }
+
+/***********************************************************************************************************************
+OPEN LAYERS MAP CONTROLS
+***********************************************************************************************************************/
+
+.layer-switcher,
+.ol-full-screen,
+.ol-mouse-position,
+.ol-rotate,
+.ol-zoom {
+    margin-top: 30px;
+}
+
+.ol-overviewmap,
+.ol-attribution,
+.ol-scale-line {
+    margin-bottom: 70px;
+}
