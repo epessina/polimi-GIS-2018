@@ -1,4 +1,4 @@
-/* Add basemap */
+// Add basemap
 var OSM = new ol.layer.Tile({
     title: 'OpenStreetMap',
     type: 'base',
@@ -15,17 +15,7 @@ var bingRoads = new ol.layer.Tile({
         imagerySet: 'Road'
     })
 });
-/*
-var bingAerial = new ol.layer.Tile({
-    title: 'Bing Maps - Aerial',
-    type: 'base',
-    visible: false,
-    source: new ol.source.BingMaps({
-        key: 'AgyifPDfXg47i2reCsF1jUuyudaxgUWbN93sYLchBznYvbX8snt9RJZBx2BmmPZq',
-        imagerySet: 'Aerial'
-    })
-});
-*/
+
 var bingAerialWithLabels = new ol.layer.Tile({
     title: 'Bing Maps - Aerial with Labels',
     type: 'base',
@@ -36,16 +26,6 @@ var bingAerialWithLabels = new ol.layer.Tile({
     })
 });
 
-/*
-var stamenWatercolor = new ol.layer.Tile({
-    title: 'Stamen Watercolor',
-    type: 'base',
-    visible: false,
-    source: new ol.source.Stamen({
-        layer: 'watercolor'
-    })
-});
-*/
 var stamenToner = new ol.layer.Tile({
     title: 'Stamen Toner',
     type: 'base',
@@ -55,27 +35,28 @@ var stamenToner = new ol.layer.Tile({
     })
 });
 
-/*
-var geojsonFormat = new ol.format.GeoJSON();
 
-function loadFeatures(response) {
-    vectorSource.addFeatures(geojsonFormat.readFeatures(response));
-}
+// Scrolling comand block scrolling with mouse, possible to scroll only pushing the alt command
+var i = new ol.interaction.MouseWheelZoom();
 
-var ECU_rails = new ol.layer.Vector({
-    title: 'Ecuador railways',
-    source: vectorSource,
-    style: new ol.style.Style({
-        stroke: new ol.style.Stroke({
-            color: 'rgb(58, 255, 81)',
-            width: 4
-        })
-    })
-});
-*/
-/* Add map */
+var oldFn = i.handleEvent;
+i.handleEvent = function(e) {
+    var type = e.type;
+    if (type !== "wheel" && type !== "wheel" ) {
+        return true;
+    }
+
+    if (!e.originalEvent.altKey) {
+        return true;
+    }
+
+    oldFn.call(this,e);
+};
+
+// Add map
 var map = new ol.Map({
     target: document.getElementById('map'),
+    interactions: ol.interaction.defaults({mouseWheelZoom: false}).extend([i]),
     layers: [
         new ol.layer.Group({
             title: 'Basemaps',
@@ -101,7 +82,8 @@ var map = new ol.Map({
     ])
 });
 
-/* Add comand*/
+// Additional comand
+// Button for change the layer
 var layerSwitcher = new ol.control.LayerSwitcher({});
 map.addControl(layerSwitcher);
 
@@ -111,7 +93,54 @@ var popup = new ol.Overlay({
     element: elementPopup
 });
 map.addOverlay(popup);
+
 /*
+// Extra
+
+// Other basemap
+
+var stamenWatercolor = new ol.layer.Tile({
+    title: 'Stamen Watercolor',
+    type: 'base',
+    visible: false,
+    source: new ol.source.Stamen({
+        layer: 'watercolor'
+    })
+});
+
+var bingAerial = new ol.layer.Tile({
+    title: 'Bing Maps - Aerial',
+    type: 'base',
+    visible: false,
+    source: new ol.source.BingMaps({
+        key: 'AgyifPDfXg47i2reCsF1jUuyudaxgUWbN93sYLchBznYvbX8snt9RJZBx2BmmPZq',
+        imagerySet: 'Aerial'
+    })
+});
+
+// Example for add vector as GeoJSON
+var geojsonFormat = new ol.format.GeoJSON();
+
+function loadFeatures(response) {
+    vectorSource.addFeatures(geojsonFormat.readFeatures(response));
+}
+
+var ECU_rails = new ol.layer.Vector({
+    title: 'Ecuador railways',
+    source: vectorSource,
+    style: new ol.style.Style({
+        stroke: new ol.style.Stroke({
+            color: 'rgb(58, 255, 81)',
+            width: 4
+        })
+    })
+});
+
+
+
+
+// Extra function
+
 map.on('click', function(event) {
     var feature = map.forEachFeatureAtPixel(event.pixel, function(feature, layer) {
         return feature;
@@ -127,8 +156,8 @@ map.on('click', function(event) {
         $(elementPopup).popover('show');
     }
 });
-*/
 
+// Remove info after moving
 map.on('pointermove', function (e) {
     if (e.dragging) {
         $(elementPopup).popover('destroy');
@@ -139,7 +168,7 @@ map.on('pointermove', function (e) {
     map.getTarget().style.cursor = hit ? 'pointer' : '';
 });
 
-/*
+
 map.on('click', function (event) {
     document.getElementById('get-feature-info').innerHTML = '';
     var viewResolution = (map.getView().getResolution());
