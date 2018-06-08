@@ -35,28 +35,10 @@ var stamenToner = new ol.layer.Tile({
     })
 });
 
-
-// Scrolling comand block scrolling with mouse, possible to scroll only pushing the alt command
-var i = new ol.interaction.MouseWheelZoom();
-
-var oldFn = i.handleEvent;
-i.handleEvent = function(e) {
-    var type = e.type;
-    if (type !== "wheel" && type !== "wheel" ) {
-        return true;
-    }
-
-    if (!e.originalEvent.altKey) {
-        return true;
-    }
-
-    oldFn.call(this,e);
-};
-
 // Add map
 var map = new ol.Map({
     target: document.getElementById('map'),
-    interactions: ol.interaction.defaults({mouseWheelZoom: false}).extend([i]),
+    // interactions: ol.interaction.defaults({mouseWheelZoom: false}).extend([i]),
     layers: [
         new ol.layer.Group({
             title: 'Basemaps',
@@ -176,4 +158,24 @@ map.on('click', function (event) {
         viewResolution, 'EPSG:3857', {'INFO_FORMAT': 'text/html'});
     if (url)
         document.getElementById('get-feature-info').innerHTML = '<iframe seamless src="' + url + '"></iframe>';
-});*/
+});
+
+
+// Scrolling comand block scrolling with mouse, possible to scroll only pushing the alt command
+var i = new ol.interaction.MouseWheelZoom();
+
+var oldFn = i.handleEvent;
+i.handleEvent = function(e) {
+    var type = e.type;
+    if (type !== "wheel" && type !== "wheel" ) {
+        return true;
+    }
+
+    if (!e.originalEvent.altKey) {
+        return true;
+    }
+
+    oldFn.call(this,e);
+};
+
+*/
