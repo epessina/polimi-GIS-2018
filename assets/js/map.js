@@ -150,7 +150,7 @@ map.on('pointermove', function (e) {
     map.getTarget().style.cursor = hit ? 'pointer' : '';
 });
 
-
+// Show coordinate of mouse position
 map.on('click', function (event) {
     document.getElementById('get-feature-info').innerHTML = '';
     var viewResolution = (map.getView().getResolution());
@@ -163,7 +163,6 @@ map.on('click', function (event) {
 
 // Scrolling comand block scrolling with mouse, possible to scroll only pushing the alt command
 var i = new ol.interaction.MouseWheelZoom();
-
 var oldFn = i.handleEvent;
 i.handleEvent = function(e) {
     var type = e.type;
