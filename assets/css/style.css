@@ -486,11 +486,65 @@ WEB GIS
 ABOUT US
 ***********************************************************************************************************************/
 
-.card {
+.team-member {
     margin: 20px;
-    border-width: 3px;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    color: #515656;
+    position: relative;
+    -webkit-box-shadow: 0 5px 30px -10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 30px -10px rgba(0, 0, 0, 0.3);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: 0.3s;
+    transition: 0.3s
 }
 
-.card h4 {
-    margin: 10px 0 0 0;
+.team-member:hover {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px)
+}
+
+.team-member .member-photo {
+    margin-bottom: 20px;
+    padding-top: 20px;
+    overflow: hidden;
+}
+
+.team-member .member-photo img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.team-member:hover .member-photo img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1)
+}
+
+.team-member h4 {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.team-member h6 {
+    font-size: 15px;
+}
+
+.team-member .member-mail {
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+    width: 100%;
+    padding: 23px 10px;
+    background-color: #ffffff;
+}
+
+.team-member:hover .member-mail {
+    bottom: 0;
 }

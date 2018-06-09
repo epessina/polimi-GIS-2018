@@ -48,4 +48,4 @@ $(function () {
         // setTimeout($('.loader').fadeOut(500), 3000);
     });
 
-})(jQuery);
+});
