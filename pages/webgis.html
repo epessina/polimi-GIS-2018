@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="gis">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -15,10 +15,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
           integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
-    <!-- Font Awesome Free 5.0.13 -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-
     <!-- OpenLayers CSS -->
     <link rel="stylesheet" href="https://openlayers.org/en/v4.6.5/css/ol.css" type="text/css">
     <link rel="stylesheet" href="http://rawgit.com/walkermatt/ol-layerswitcher/master/src/ol-layerswitcher.css">
@@ -26,22 +22,24 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="../assets/css/style.css" type="text/css">
 
-    <style type="text/css">
-        html, body, #map {
-            margin: 0;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-
 </head>
 
-<body>
+<body class="gis">
 
-<div style="height: 100%; width: 100%; position: relative; overflow: hidden">
+<!-- Loader -->
+<!--<div class="loader">-->
+    <!--<div class="loading-cubes">-->
+        <!--<div class="cube1 cube"></div>-->
+        <!--<div class="cube2 cube"></div>-->
+        <!--<div class="cube4 cube"></div>-->
+        <!--<div class="cube3 cube"></div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<div class="gis-content">
 
     <!-- Navigation bar -->
-    <div class="nav-menu" style="background-color: #4e4d4d; padding: 0;">
+    <div class="nav-menu">
 
         <div class="container">
 
@@ -102,14 +100,6 @@
 
 
 <!-- Bootstrap 4.1.1 -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous">
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous">
-</script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
         integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous">
@@ -125,9 +115,6 @@
 <!-- OpenLayers JS -->
 <script src="https://openlayers.org/en/v4.6.5/build/ol.js" type="text/javascript"></script>
 <script src="http://rawgit.com/walkermatt/ol-layerswitcher/master/dist/ol-layerswitcher.js"></script>
-
-<!-- Main JS-->
-<script src="../assets/js/script.js" type="text/javascript"></script>
 
 <!-- Map JS -->
 <script src="../assets/js/map.js"></script>
