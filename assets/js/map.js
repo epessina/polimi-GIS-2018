@@ -55,12 +55,12 @@ var map = new ol.Map({
     }),
     controls: ol.control.defaults().extend([
         new ol.control.ScaleLine(),
-        new ol.control.FullScreen(),
+        new ol.control.FullScreen()/*,
         new ol.control.OverviewMap(),
         new ol.control.MousePosition({
             coordinateFormat: ol.coordinate.createStringXY(4),
             projection: 'EPSG:4326'
-        })
+        })*/
     ])
 });
 
@@ -68,14 +68,14 @@ var map = new ol.Map({
 // Button for change the layer
 var layerSwitcher = new ol.control.LayerSwitcher({});
 map.addControl(layerSwitcher);
-
+/*
 var elementPopup = document.getElementById('popup');
 
 var popup = new ol.Overlay({
     element: elementPopup
 });
 map.addOverlay(popup);
-
+*/
 /*
 // Extra
 
