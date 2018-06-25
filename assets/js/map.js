@@ -1,3 +1,5 @@
+// Add layers
+
 // Add basemap
 var OSM = new ol.layer.Tile({
     title: 'OpenStreetMap',
@@ -42,7 +44,7 @@ var map = new ol.Map({
     layers: [
         new ol.layer.Group({
             title: 'Basemaps',
-            layers: [OSM, stamenToner, bingAerialWithLabels, bingRoads]
+            layers: [stamenToner, OSM, bingAerialWithLabels, bingRoads]
         })/*,
           new ol.layer.Group({
             title: 'Overlay Layers',
