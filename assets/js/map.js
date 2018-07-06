@@ -4,7 +4,7 @@
 var OSM = new ol.layer.Tile({
     title: 'OpenStreetMap',
     type: 'base',
-    visible: true,
+    visible: false,
     source: new ol.source.OSM()
 });
 
@@ -31,7 +31,7 @@ var bingAerialWithLabels = new ol.layer.Tile({
 var stamenToner = new ol.layer.Tile({
     title: 'Stamen Toner',
     type: 'base',
-    visible: false,
+    visible: true,
     source: new ol.source.Stamen({
         layer: 'toner'
     })
@@ -70,6 +70,7 @@ var map = new ol.Map({
 // Button for change the layer
 var layerSwitcher = new ol.control.LayerSwitcher({});
 map.addControl(layerSwitcher);
+
 /*
 var elementPopup = document.getElementById('popup');
 
