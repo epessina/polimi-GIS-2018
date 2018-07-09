@@ -224,7 +224,7 @@ NAVBAR
     position: relative;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 767px) {
     .navbar-expand-md .navbar-nav .nav-link {
         padding-right: 1rem;
         padding-left: 1rem;
@@ -241,7 +241,7 @@ NAVBAR
     }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
     .navbar-nav.is-scrolling {
         padding-bottom: 1rem;
     }
@@ -400,6 +400,35 @@ footer {
     color: white;
     padding: 15px 0 15px 0;
     font-size: 15px;
+}
+
+/***********************************************************************************************************************
+PROJECT
+***********************************************************************************************************************/
+.text p, ul {
+    font-size: 20px;
+    text-align: justify;
+}
+
+.text li {
+    margin: 0 0 10px 0
+}
+
+.text .section-heading {
+    margin-bottom: 50px;
+}
+
+.text .section-heading h2 {
+    /*color: #009688;*/
+}
+
+.text .section-heading:not(.first-heading) {
+    margin-top: 100px;
+}
+
+.text a {
+    font-weight: 500;
+    color: #009688;
 }
 
 /***********************************************************************************************************************
