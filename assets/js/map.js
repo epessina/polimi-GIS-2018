@@ -1,5 +1,65 @@
 // Add layers
 
+var vectorSource = new ol.source.Vector({
+    loader: function (extent, resolution, projection) {
+        var url = 'http://ows3.como.polimi.it:8080/geoserver/user01_18/' +
+            'ows?service=WFS&version=1.0.0&request=GetFeature&typeName=user01_18:' +
+            'CENED_2.0_sondrio&maxFeatures=50&outputFormat=application%2Fjson';
+        $.ajax({url: url, dataType: 'jsonp'});
+    }
+});
+
+var geojsonFormat = new ol.format.GeoJSON();
+
+/*function loadFeatures(response) {
+    vectorSource.addFeatures(geojsonFormat.readFeatures(response));
+}
+*/
+
+var building_point = new ol.layer.Vector({
+    title: 'Cened 2.0+ data (Sondrio)',
+    source: vectorSource,
+    style: new ol.style.Style({
+        stroke: new ol.style.Stroke({
+            color: 'rgb(58, 255, 81)',
+            width: 20
+        })
+    })
+});
+
+var geotermal = new ol.layer.Image({
+    title: 'Geothermal plants',
+    source: new ol.source.ImageWMS({
+        url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
+        params: {'LAYERS': 'user01_18:geotermal_sondrio'}
+    })
+});
+
+var hydraulic = new ol.layer.Image({
+    title: 'Hydraulic regolation works',
+    source: new ol.source.ImageWMS({
+        url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
+        params: {'LAYERS': 'user01_18:hydraulic_sondrio'}
+    })
+});
+
+var dams = new ol.layer.Image({
+    title: 'Dams',
+    source: new ol.source.ImageWMS({
+        url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
+        params: {'LAYERS': 'user01_18:dams_sondrio'}
+    })
+});
+
+var province = new ol.layer.Image({
+    title: 'Province boundary',
+    source: new ol.source.ImageWMS({
+        url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
+        params: {'LAYERS': 'user01_18:sondrio_boundary'}
+    }),
+    visible: false
+});
+
 // Add basemap
 var OSM = new ol.layer.Tile({
     title: 'OpenStreetMap',
@@ -45,11 +105,11 @@ var map = new ol.Map({
         new ol.layer.Group({
             title: 'Basemaps',
             layers: [stamenToner, OSM, bingAerialWithLabels, bingRoads]
-        })/*,
-          new ol.layer.Group({
+        }),
+        new ol.layer.Group({
             title: 'Overlay Layers',
-            layers: []
-        })*/
+            layers: [province, geotermal, hydraulic, dams, building_point]
+        })
     ],
     view: new ol.View({
         center: ol.proj.fromLonLat([9.87, 46.17]),
@@ -79,6 +139,7 @@ var popup = new ol.Overlay({
 });
 map.addOverlay(popup);
 */
+
 /*
 // Extra
 
@@ -104,24 +165,6 @@ var bingAerial = new ol.layer.Tile({
 });
 
 // Example for add vector as GeoJSON
-var geojsonFormat = new ol.format.GeoJSON();
-
-function loadFeatures(response) {
-    vectorSource.addFeatures(geojsonFormat.readFeatures(response));
-}
-
-var ECU_rails = new ol.layer.Vector({
-    title: 'Ecuador railways',
-    source: vectorSource,
-    style: new ol.style.Style({
-        stroke: new ol.style.Stroke({
-            color: 'rgb(58, 255, 81)',
-            width: 4
-        })
-    })
-});
-
-
 
 
 // Extra function
