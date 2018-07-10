@@ -11,10 +11,9 @@ var vectorSource = new ol.source.Vector({
 
 var geojsonFormat = new ol.format.GeoJSON();
 
-/*function loadFeatures(response) {
+function loadFeatures(response) {
     vectorSource.addFeatures(geojsonFormat.readFeatures(response));
 }
-*/
 
 var building_point = new ol.layer.Vector({
     title: 'Cened 2.0+ data (Sondrio)',
@@ -57,7 +56,8 @@ var province = new ol.layer.Image({
         url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
         params: {'LAYERS': 'user01_18:sondrio_boundary'}
     }),
-    visible: false
+    visible: false,
+    opacity: 0.2
 });
 
 // Add basemap
