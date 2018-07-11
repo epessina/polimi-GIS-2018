@@ -2,9 +2,9 @@
 
 var vectorSource = new ol.source.Vector({
     loader: function (extent, resolution, projection) {
-        var url = 'http://ows3.como.polimi.it:8080/geoserver/user01_18/' +
-            'ows?service=WFS&version=1.0.0&request=GetFeature&typeName=user01_18:' +
-            'CENED_2.0_sondrio&maxFeatures=50&outputFormat=application%2Fjson';
+        var url = 'http://ows3.como.polimi.it:8080/geoserver/user01_18/ows?service=WFS' +
+            '&version=1.0.0&request=GetFeature&typeName=user01_18:CENED_2.0_sondrio&' +
+            'outputFormat=text/javascript&srsname=EPSG:4326&format_options=callback:loadFeatures';
         $.ajax({url: url, dataType: 'jsonp'});
     }
 });
@@ -21,10 +21,18 @@ var building_point = new ol.layer.Vector({
     style: new ol.style.Style({
         stroke: new ol.style.Stroke({
             color: 'rgb(58, 255, 81)',
-            width: 20
+            width: 5
         })
     })
 });
+/*
+var point = new ol.layer.Image({
+    title: 'sondrio point wms',
+    source: new ol.source.ImageWMS({
+        url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
+        params: {'LAYERS': 'user01_18:CENED_2.0_sondrio'}
+    })
+});*/
 
 var geotermal = new ol.layer.Image({
     title: 'Geothermal plants',
@@ -60,11 +68,28 @@ var province = new ol.layer.Image({
     opacity: 0.2
 });
 
+var building_footprint = new ol.layer.Image({
+    title: 'Building footprint',
+    source: new ol.source.ImageWMS({
+        url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
+        params: {'LAYERS': 'user01_18:Sondrio_building_footprint'}
+    })
+});
+
+var point_lecco = new ol.layer.Image({
+    title: 'Cened 2.0+ data (Lecco province)',
+    source: new ol.source.ImageWMS({
+        url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
+        params: {'LAYERS': 'user03_18:CENED_2.0_LECCO'}
+    }),
+    visible: false
+});
+
 // Add basemap
 var OSM = new ol.layer.Tile({
     title: 'OpenStreetMap',
     type: 'base',
-    visible: false,
+    visible: true,
     source: new ol.source.OSM()
 });
 
@@ -91,7 +116,7 @@ var bingAerialWithLabels = new ol.layer.Tile({
 var stamenToner = new ol.layer.Tile({
     title: 'Stamen Toner',
     type: 'base',
-    visible: true,
+    visible: false,
     source: new ol.source.Stamen({
         layer: 'toner'
     })
@@ -100,15 +125,15 @@ var stamenToner = new ol.layer.Tile({
 // Add map
 var map = new ol.Map({
     target: document.getElementById('map'),
-    // interactions: ol.interaction.defaults({mouseWheelZoom: false}).extend([i]),
+    // interactions: ol.interaction.defaults({mouseWheelZoom: false}).extend([i])
     layers: [
         new ol.layer.Group({
             title: 'Basemaps',
-            layers: [stamenToner, OSM, bingAerialWithLabels, bingRoads]
+            layers: [stamenToner, bingAerialWithLabels, bingRoads, OSM]
         }),
         new ol.layer.Group({
             title: 'Overlay Layers',
-            layers: [province, geotermal, hydraulic, dams, building_point]
+            layers: [province, point_lecco, building_footprint, geotermal, hydraulic, dams, building_point]
         })
     ],
     view: new ol.View({
@@ -131,44 +156,6 @@ var map = new ol.Map({
 var layerSwitcher = new ol.control.LayerSwitcher({});
 map.addControl(layerSwitcher);
 
-/*
-var elementPopup = document.getElementById('popup');
-
-var popup = new ol.Overlay({
-    element: elementPopup
-});
-map.addOverlay(popup);
-*/
-
-/*
-// Extra
-
-// Other basemap
-
-var stamenWatercolor = new ol.layer.Tile({
-    title: 'Stamen Watercolor',
-    type: 'base',
-    visible: false,
-    source: new ol.source.Stamen({
-        layer: 'watercolor'
-    })
-});
-
-var bingAerial = new ol.layer.Tile({
-    title: 'Bing Maps - Aerial',
-    type: 'base',
-    visible: false,
-    source: new ol.source.BingMaps({
-        key: 'AgyifPDfXg47i2reCsF1jUuyudaxgUWbN93sYLchBznYvbX8snt9RJZBx2BmmPZq',
-        imagerySet: 'Aerial'
-    })
-});
-
-// Example for add vector as GeoJSON
-
-
-// Extra function
-
 map.on('click', function(event) {
     var feature = map.forEachFeatureAtPixel(event.pixel, function(feature, layer) {
         return feature;
@@ -184,6 +171,22 @@ map.on('click', function(event) {
         $(elementPopup).popover('show');
     }
 });
+
+/*
+var elementPopup = document.getElementById('popup');
+
+var popup = new ol.Overlay({
+    element: elementPopup
+});
+map.addOverlay(popup);
+*/
+
+/*
+// Extra
+
+// Extra function
+
+
 
 // Remove info after moving
 map.on('pointermove', function (e) {
