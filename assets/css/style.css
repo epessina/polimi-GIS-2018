@@ -222,6 +222,7 @@ NAVBAR
 
 .navbar-nav .nav-link {
     position: relative;
+    font-size: 18px;
 }
 
 @media (min-width: 767px) {
@@ -271,7 +272,7 @@ header {
     width: 100%;
     position: relative;
     z-index: 1;
-    background: url(../img/hero3.png) bottom center;
+    background: url(../img/hero_2.png) bottom center;
     background-size: cover;
 }
 
@@ -301,6 +302,10 @@ header {
     color: #f8f9fa;
     background: transparent none;
     border: 3px solid #f8f9fa;
+}
+
+.hero .first-button {
+    margin-right: 100px;
 }
 
 /***********************************************************************************************************************
