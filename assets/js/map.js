@@ -4,7 +4,7 @@ var vectorSource = new ol.source.Vector({
     loader: function (extent, resolution, projection) {
         var url = 'http://ows3.como.polimi.it:8080/geoserver/user01_18/ows?service=WFS' +
             '&version=1.0.0&request=GetFeature&typeName=user01_18:CENED_2.0_sondrio&' +
-            'outputFormat=text/javascript&srsname=EPSG:4326&format_options=callback:loadFeatures';
+            'outputFormat=text/javascript&srsname=EPSG:32632&format_options=callback:loadFeatures';
         $.ajax({url: url, dataType: 'jsonp'});
     }
 });
@@ -20,8 +20,8 @@ var building_point = new ol.layer.Vector({
     source: vectorSource,
     style: new ol.style.Style({
         stroke: new ol.style.Stroke({
-            color: 'rgb(58, 255, 81)',
-            width: 5
+            color: 'rgb(255, 255, 81)',
+            width: 20
         })
     })
 });
@@ -64,7 +64,7 @@ var municipality = new ol.layer.Image({
         url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
         params: {'LAYERS': 'user01_18:sondrio_mun'}
     }),
-    opacity: 0.2
+    opacity: 0.5
 });
 
 var province = new ol.layer.Image({
@@ -73,9 +73,9 @@ var province = new ol.layer.Image({
         url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
         params: {'LAYERS': 'user01_18:sondrio_boundary'}
     }),
-    // opacity: 1,
-    minResolution: 80000,
-    // maxResolution: 5000,
+    opacity: 0.2,
+    minResolution: 50000,
+    maxResolution: 1000000,
     visible: true
 });
 
@@ -144,12 +144,12 @@ var map = new ol.Map({
         }),
         new ol.layer.Group({
             title: 'Overlay Layers',
-            layers: [province, point_lecco, building_footprint, geotermal, hydraulic, dams, building_point]
+            layers: [province, municipality, point_lecco, building_footprint, geotermal, hydraulic, dams, building_point]
         })
     ],
     view: new ol.View({
         center: ol.proj.fromLonLat([9.87405, 46.16944]),
-        zoom: 16
+        zoom: 15
     }),
     controls: ol.control.defaults().extend([
         new ol.control.ScaleLine(),
@@ -167,7 +167,14 @@ var map = new ol.Map({
 var layerSwitcher = new ol.control.LayerSwitcher({});
 map.addControl(layerSwitcher);
 
-/*
+var elementPopup = document.getElementById('popup');
+
+var popup = new ol.Overlay({
+    element: elementPopup
+});
+
+map.addOverlay(popup);
+
 map.on('click', function(event) {
     var feature = map.forEachFeatureAtPixel(event.pixel, function(feature, layer) {
         return feature;
@@ -185,13 +192,6 @@ map.on('click', function(event) {
 });
 
 
-var elementPopup = document.getElementById('popup');
-
-var popup = new ol.Overlay({
-    element: elementPopup
-});
-map.addOverlay(popup);
-*/
 
 /*
 // Extra
