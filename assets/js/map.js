@@ -5,9 +5,9 @@
 
 var vectorSource = new ol.source.Vector({
     loader: function (extent, resolution, projection) {
-        var url = 'http://ows3.como.polimi.it:8080/geoserver/user01_18/ows?service=WFS' +
-            '&version=1.0.0&request=GetFeature&typeName=user01_18:CENED_2.0_sondrio&' +
-            'outputFormat=text/javascript&srsname=EPSG:32632&format_options=callback:loadFeatures';
+        var url = 'http://ows3.como.polimi.it:8080/geoserver/ows?service=WFS' +
+            '&version=2.0.0&request=GetFeature&typeName=user01_18:CENED_2.0_sondrio&' +
+            'outputFormat=text/javascript&srsname=EPSG:900913&format_options=callback:loadFeatures';
         $.ajax({url: url, dataType: 'jsonp'});
     }
 });
@@ -19,7 +19,7 @@ function loadFeatures(response) {
 }
 
 var stroke = new ol.style.Stroke({color: 'black', width: 2});
-var fill   = new ol.style.Fill({color: 'red'});
+var fill   = new ol.style.Fill({color: 'blue'});
 
 var building_point = new ol.layer.Vector({
     title: 'Cened 2.0+ data (Sondrio)',
@@ -28,14 +28,13 @@ var building_point = new ol.layer.Vector({
         image: new ol.style.RegularShape({
             fill: fill,
             stroke: stroke,
-            points: 4,
-            radius: 10,
-            angle: Math.PI / 4
+            points: 4, // number of vertex
+            radius: 4,
+            angle: Math.PI
         })
     }),
     maxResolution: 50
 });
-
 /*
 var point = new ol.layer.Image({
     title: 'sondrio point wms',
@@ -167,7 +166,7 @@ var map = new ol.Map({
     ],
     view: new ol.View({
         center: ol.proj.fromLonLat([9.87405, 46.16944]),
-        zoom: 15
+        zoom: 16
     }),
     controls: ol.control.defaults().extend([
         new ol.control.ScaleLine(),
@@ -185,6 +184,8 @@ var map = new ol.Map({
 var layerSwitcher = new ol.control.LayerSwitcher({});
 map.addControl(layerSwitcher);
 
+
+
 var elementPopup = document.getElementById('popup');
 
 var popup = new ol.Overlay({
@@ -201,34 +202,23 @@ map.on('click', function (event) {
         var pixel = event.pixel;
         var coord = map.getCoordinateFromPixel(pixel);
         popup.setPosition(coord);
-        $(elementPopup).attr('title', 'Ecuador railways');
-        $(elementPopup).attr('data-content', '<b>Id: </b>' + feature.get('FID_rail_d') +
-            '</br><b>Description: </b>' + feature.get('F_CODE_DES'));
+        $(elementPopup).attr('title', 'Cened_2.0+_Info');
+        $(elementPopup).attr('data-content', '<b>Id: </b>' + feature.get('COD_APE') +
+            '</br><b>Energetic Class: </b>' + feature.get('CLASSE_ENE')+
+            '</br><b>Energetic Vector: </b>'+ feature.get('VETTORE_EN'));
         $(elementPopup).popover({'placement': 'top', 'html': true});
         $(elementPopup).popover('show');
     }
 });
 
-
-/*
-// Extra
-
-// Extra function
-
-
-
-// Remove info after moving
-map.on('pointermove', function (e) {
-    if (e.dragging) {
-        $(elementPopup).popover('destroy');
-        return;
-    }
+map.on('pointermove', function(e) { if (e.dragging) {
+    $(elementPopup).popover('destroy');
+    return; }
     var pixel = map.getEventPixel(e.originalEvent);
-    var hit = map.hasFeatureAtPixel(pixel);
-    map.getTarget().style.cursor = hit ? 'pointer' : '';
+    var hit = map.hasFeatureAtPixel(pixel); map.getTarget().style.cursor = hit ? 'pointer' : '';
 });
 
-// Show coordinate of mouse position
+/*
 map.on('click', function (event) {
     document.getElementById('get-feature-info').innerHTML = '';
     var viewResolution = (map.getView().getResolution());
