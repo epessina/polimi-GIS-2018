@@ -221,20 +221,22 @@
             </div>
 
             <p>
-                The last part of the project was to create this web site and the belonging web GIS with all its current
-                features, using GeoServer and OpenLayers for publishing the spatial data and putting it on the site. The
-                pages themselves are created using .html scripts, while the .js and .css scripts help the functioning of
-                the page and the map features accordingly.
+                The last part of the project consisted in creating a WebGIS to visualize the transformed data along with
+                various basemaps and ancillary datasets related to the energy topic, all published as WMS or WFS using
+                <a href="http://geoserver.org/" target="_blank">GeoServer</a>.
             </p>
             <p>
-                On the Web GIS in this site, there is a visualization of the original CENED dataset of the buildings
-                selected for this project. There is a selection of 103 buildings in the centre of Sondrio. The
-                boundaries of the province and the building footprint can also be found. The last to vector layers
-                found, are dams, hydraulic regulation networks and geothermal plants in the area. These layers are
-                shown, because they either already provide electric or heat energy, or they have the potential toprovide
-                energy for housing, if built and facilitated. There are also 4 different basemaps to be found.
+                Using <a href="https://openlayers.org/" target="_blank">OpenLayers</a> we set up a
+                <a href="webgis.html" target="_blank">WebGIS</a> that shows a visualization of the original CENED
+                dataset - consisting in a selection of 103 buildings in the centre of Sondrio -, the boundaries of the
+                municipality and of the province and the building footprint.
+                <br>
+                As ancillary layers one can find the dams, the hydraulic regulation works and the geothermal plants in
+                the area. The choice had fallen upon those constructions because they either provide or have the
+                potential to provide electric or heat energy for housing.
+                <br>
+                The map is completed by the CENED dataset of Lecco and a choice of four different basemaps.
             </p>
-
 
         </div>
 
@@ -262,18 +264,18 @@
         <div class="row" style="padding-bottom: 70px">
 
             <div class="col-3">
-                <div class="tech">
+                <div class="tech" id="qgis">
                     <a href="https://www.qgis.org/it/site/" target="_blank">
                         <div class="tech-icon">
                             <img src="../assets/img/icon_qgis.png">
                         </div>
-                        <h4>QGIS</h4>
+                        <h4>qGIS</h4>
                     </a>
                 </div>
             </div>
 
             <div class="col-3">
-                <div class="tech">
+                <div class="tech" id="geoserver">
                     <a href="http://geoserver.org/" target="_blank">
                         <div class="tech-icon">
                             <img src="../assets/img/icon_geoserver.png">
@@ -284,7 +286,7 @@
             </div>
 
             <div class="col-3">
-                <div class="tech">
+                <div class="tech" id="openlayers">
                     <a href="https://openlayers.org/" target="_blank">
                         <div class="tech-icon">
                             <img src="../assets/img/icon_openlayers.png">
@@ -295,38 +297,19 @@
             </div>
 
             <div class="col-3">
-                <div class="tech">
+                <div class="tech" id="hale">
                     <a href="https://www.wetransform.to/products/halestudio/" target="_blank">
                         <div class="tech-icon">
                             <img src="../assets/img/icon_halestudio.png">
                         </div>
-                        <h4>hale STUDIO</h4>
+                        <h4>Hale Studio</h4>
                     </a>
                 </div>
             </div>
 
         </div>
 
-        <div class="text">
-
-            <p>
-                QGIS is an open source desktop GIS used to visualize the data and clean the dataset to only the selected
-                buildings.
-            </p>
-            <p>
-                GeoServer is an open source software used to publish data from any major data source using open
-                standards.
-            </p>
-            <p>
-                OpenLayers is an open source software used to create the web GIS. It can put dynamic maps in any web
-                page.
-            </p>
-            <p>
-                Hale Studio is an open source data transformation software used to transform the data from CENED to the
-                INSPIRE compliant format.
-            </p>
-
-        </div>
+        <div class="text technology-text"></div>
 
     </div>
 
@@ -422,6 +405,7 @@
 </script>
 
 <!-- Main JS-->
+<script src="../assets/js/project.js" type="text/javascript"></script>
 <script src="../assets/js/script.js" type="text/javascript"></script>
 
 </body>
