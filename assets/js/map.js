@@ -32,7 +32,8 @@ var building_point = new ol.layer.Vector({
             radius: 10,
             angle: Math.PI / 4
         })
-    })
+    }),
+    maxResolution: 50
 });
 
 /*
@@ -49,7 +50,8 @@ var geotermal = new ol.layer.Image({
     source: new ol.source.ImageWMS({
         url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
         params: {'LAYERS': 'user01_18:geotermal_sondrio'}
-    })
+    }),
+    maxResolution: 50
 });
 
 var hydraulic = new ol.layer.Image({
@@ -57,7 +59,8 @@ var hydraulic = new ol.layer.Image({
     source: new ol.source.ImageWMS({
         url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
         params: {'LAYERS': 'user01_18:hydraulic_sondrio'}
-    })
+    }),
+    maxResolution: 50
 });
 
 var dams = new ol.layer.Image({
@@ -65,7 +68,9 @@ var dams = new ol.layer.Image({
     source: new ol.source.ImageWMS({
         url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
         params: {'LAYERS': 'user01_18:dams_sondrio'}
-    })
+    }),
+    maxResolution: 50
+
 });
 
 var municipality = new ol.layer.Image({
@@ -74,7 +79,8 @@ var municipality = new ol.layer.Image({
         url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
         params: {'LAYERS': 'user01_18:sondrio_mun'}
     }),
-    opacity: 0.5
+    opacity: 0.5,
+    maxResolution: 110
 });
 
 var province = new ol.layer.Image({
@@ -94,7 +100,8 @@ var building_footprint = new ol.layer.Image({
     source: new ol.source.ImageWMS({
         url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
         params: {'LAYERS': 'user01_18:Sondrio_building_footprint'}
-    })
+    }),
+    maxResolution: 20
 });
 
 var point_lecco = new ol.layer.Image({
@@ -103,7 +110,8 @@ var point_lecco = new ol.layer.Image({
         url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
         params: {'LAYERS': 'user03_18:CENED_2.0_LECCO'}
     }),
-    visible: false
+    visible: false,
+    maxResolution: 100
 });
 
 // Add basemap
