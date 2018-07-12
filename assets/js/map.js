@@ -58,14 +58,25 @@ var dams = new ol.layer.Image({
     })
 });
 
+var municipality = new ol.layer.Image({
+    title: 'Municipality boundary',
+    source: new ol.source.ImageWMS({
+        url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
+        params: {'LAYERS': 'user01_18:sondrio_mun'}
+    }),
+    opacity: 0.2
+});
+
 var province = new ol.layer.Image({
     title: 'Province boundary',
     source: new ol.source.ImageWMS({
         url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
         params: {'LAYERS': 'user01_18:sondrio_boundary'}
     }),
-    visible: false,
-    opacity: 0.2
+    // opacity: 1,
+    minResolution: 80000,
+    // maxResolution: 5000,
+    visible: true
 });
 
 var building_footprint = new ol.layer.Image({
@@ -138,7 +149,7 @@ var map = new ol.Map({
     ],
     view: new ol.View({
         center: ol.proj.fromLonLat([9.87405, 46.16944]),
-        zoom: 17
+        zoom: 16
     }),
     controls: ol.control.defaults().extend([
         new ol.control.ScaleLine(),
@@ -156,6 +167,7 @@ var map = new ol.Map({
 var layerSwitcher = new ol.control.LayerSwitcher({});
 map.addControl(layerSwitcher);
 
+/*
 map.on('click', function(event) {
     var feature = map.forEachFeatureAtPixel(event.pixel, function(feature, layer) {
         return feature;
@@ -172,7 +184,7 @@ map.on('click', function(event) {
     }
 });
 
-/*
+
 var elementPopup = document.getElementById('popup');
 
 var popup = new ol.Overlay({
