@@ -89,7 +89,7 @@ var province = new ol.layer.Image({
         url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
         params: {'LAYERS': 'user01_18:sondrio_boundary'}
     }),
-    opacity: 0.2,
+    opacity: 0.4,
     minResolution: 20,
     maxResolution: 1000,
     visible: true
