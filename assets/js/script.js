@@ -13,10 +13,12 @@ $(function () {
     var navBar = $('#navbar');
 
     navBar.on('show.bs.collapse', function (e) {
+        console.log("here");
         $(this).parents('.nav-menu').addClass('menu-is-open');
     });
 
     navBar.on('hide.bs.collapse', function (e) {
+        console.log("here");
         $(this).parents('.nav-menu').removeClass('menu-is-open');
     });
 
@@ -38,14 +40,5 @@ $(function () {
     $(window).on('scroll', function () {
         menuScroll();
     });
-
-
-    //----------------------------------------------------------------------------------------------
-    // LOADER
-    //----------------------------------------------------------------------------------------------
-    // $(window).on("load", function () {
-    //     $('.loader').fadeOut(500);
-    //     // setTimeout($('.loader').fadeOut(500), 3000);
-    // });
 
 });

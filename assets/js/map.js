@@ -1,3 +1,6 @@
+// Use strict mode to "secure" the script from syntax errors
+"use strict";
+
 // Add layers
 
 var vectorSource = new ol.source.Vector({
@@ -25,6 +28,7 @@ var building_point = new ol.layer.Vector({
         })
     })
 });
+
 /*
 var point = new ol.layer.Image({
     title: 'sondrio point wms',
