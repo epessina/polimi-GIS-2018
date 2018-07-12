@@ -18,13 +18,19 @@ function loadFeatures(response) {
     vectorSource.addFeatures(geojsonFormat.readFeatures(response));
 }
 
+var stroke = new ol.style.Stroke({color: 'black', width: 2});
+var fill   = new ol.style.Fill({color: 'red'});
+
 var building_point = new ol.layer.Vector({
     title: 'Cened 2.0+ data (Sondrio)',
     source: vectorSource,
     style: new ol.style.Style({
-        stroke: new ol.style.Stroke({
-            color: 'rgb(255, 255, 81)',
-            width: 20
+        image: new ol.style.RegularShape({
+            fill: fill,
+            stroke: stroke,
+            points: 4,
+            radius: 10,
+            angle: Math.PI / 4
         })
     })
 });
@@ -78,8 +84,8 @@ var province = new ol.layer.Image({
         params: {'LAYERS': 'user01_18:sondrio_boundary'}
     }),
     opacity: 0.2,
-    minResolution: 50000,
-    maxResolution: 1000000,
+    minResolution: 20,
+    maxResolution: 1000,
     visible: true
 });
 
@@ -179,8 +185,8 @@ var popup = new ol.Overlay({
 
 map.addOverlay(popup);
 
-map.on('click', function(event) {
-    var feature = map.forEachFeatureAtPixel(event.pixel, function(feature, layer) {
+map.on('click', function (event) {
+    var feature = map.forEachFeatureAtPixel(event.pixel, function (feature, layer) {
         return feature;
     });
     if (feature != null) {
@@ -194,7 +200,6 @@ map.on('click', function(event) {
         $(elementPopup).popover('show');
     }
 });
-
 
 
 /*
