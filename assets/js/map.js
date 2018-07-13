@@ -12,24 +12,21 @@ var vectorSource = new ol.source.Vector({
     }
 });
 
-var geojsonFormat = new ol.format.GeoJSON();
+var geoJsonFormat = new ol.format.GeoJSON();
 
 function loadFeatures(response) {
-    vectorSource.addFeatures(geojsonFormat.readFeatures(response));
+    vectorSource.addFeatures(geoJsonFormat.readFeatures(response));
 }
-
-var stroke = new ol.style.Stroke({color: 'black', width: 2});
-var fill   = new ol.style.Fill({color: 'blue'});
 
 var building_point = new ol.layer.Vector({
     title: 'Cened 2.0+ data (Sondrio)',
     source: vectorSource,
     style: new ol.style.Style({
         image: new ol.style.RegularShape({
-            fill: fill,
-            stroke: stroke,
+            fill: new ol.style.Fill({color: '#03C7EA'}),
+            stroke: new ol.style.Stroke({color: '#000000', width: 1}),
             points: 8, // number of vertex
-            radius: 4,
+            radius: 5,
             angle: Math.PI
         })
     }),
@@ -71,6 +68,7 @@ var municipality = new ol.layer.Image({
         params: {'LAYERS': 'user01_18:sondrio_mun'}
     }),
     opacity: 0.5,
+    minResolution: 5,
     maxResolution: 150
 });
 
@@ -92,7 +90,7 @@ var building_footprint = new ol.layer.Image({
         url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
         params: {'LAYERS': 'user01_18:Sondrio_building_footprint'}
     }),
-    maxResolution: 15
+    maxResolution: 5
 });
 
 var point_lecco = new ol.layer.Image({
@@ -145,7 +143,6 @@ var stamenToner = new ol.layer.Tile({
 // Add map
 var map = new ol.Map({
     target: document.getElementById('map'),
-    // interactions: ol.interaction.defaults({mouseWheelZoom: false}).extend([i])
     layers: [
         new ol.layer.Group({
             title: 'Basemaps',
@@ -193,17 +190,19 @@ map.on('click', function (event) {
         var coord = map.getCoordinateFromPixel(pixel);
         popup.setPosition(coord);
         $(elementPopup).attr('title', 'Cened 2.0+ Info');
+
+        var text;
+        if (feature.get('RIQ_CLASSE').length === 0)
+            text = "-";
+        else
+            text = feature.get('RIQ_CLASSE');
+
         $(elementPopup).attr('data-content',
             '<b>Id Certification: </b>' + feature.get('COD_APE') +
             '</br><b>Date Certification: </b>' + feature.get('DATA_INS') +
             '</br><b>Energetic Class: </b>' + feature.get('CLASSE_ENE') +
-            '</br><b>New Energetic Class Proposed: </b>' + feature.get('RIQ_CLASSE')
+            '</br><b>New Energetic Class Proposed: </b>' + text
         );
-        // $(elementPopup).addClass("test");
-        // $(elementPopup).append("<b>Id Certification: </b>" + feature.get('COD_APE') + "\n</br>" +
-        //     "<b>Date Certification: </b>" + feature.get('DATA_INS') + "\n</br>" +
-        //     "<b>Energetic Class: </b>" + feature.get('CLASSE_ENE') + "\n</br>" +
-        //     "<b>New Energetic Class Proposed: </b>" + feature.get('RIQ_CLASSE'));
         $(elementPopup).popover({'placement': 'top', 'html': true});
         $(elementPopup).popover('show');
     }
@@ -218,32 +217,3 @@ map.on('pointermove', function (e) {
     var hit                      = map.hasFeatureAtPixel(pixel);
     map.getTarget().style.cursor = hit ? 'pointer' : '';
 });
-
-/*
-map.on('click', function (event) {
-    document.getElementById('get-feature-info').innerHTML = '';
-    var viewResolution = (map.getView().getResolution());
-    var url = ECU_roads.getSource().getGetFeatureInfoUrl(event.coordinate,
-        viewResolution, 'EPSG:3857', {'INFO_FORMAT': 'text/html'});
-    if (url)
-        document.getElementById('get-feature-info').innerHTML = '<iframe seamless src="' + url + '"></iframe>';
-});
-
-
-// Scrolling comand block scrolling with mouse, possible to scroll only pushing the alt command
-var i = new ol.interaction.MouseWheelZoom();
-var oldFn = i.handleEvent;
-i.handleEvent = function(e) {
-    var type = e.type;
-    if (type !== "wheel" && type !== "wheel" ) {
-        return true;
-    }
-
-    if (!e.originalEvent.altKey) {
-        return true;
-    }
-
-    oldFn.call(this,e);
-};
-
-*/

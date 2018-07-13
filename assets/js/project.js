@@ -17,7 +17,7 @@ $(function () {
 
     qGis.hover(
         function () {
-            // Appends to the div with class *text* this html snippet.
+            // Appends to the div with class *text* this piece of html code.
             text.append("<p>QGIS is an open source desktop Geographic Information System that" +
                 " allows to create, edit, visualize and publish geospatial information.<br>The" +
                 " main usage in our project was the visualization and the cleaning of the dataset" +

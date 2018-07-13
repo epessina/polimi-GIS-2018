@@ -297,6 +297,7 @@ footer {
 /***********************************************************************************************************************
 PROJECT
 ***********************************************************************************************************************/
+
 .text p, ul {
     font-size: 20px;
     text-align: justify;
@@ -385,19 +386,54 @@ WEB GIS
     padding: 0;
 }
 
-.layer-switcher,
-.ol-full-screen,
-.ol-mouse-position,
-.ol-rotate,
+/*
+* Controls
+*/
+
 .ol-zoom {
-    margin-top: 30px;
+    margin: 30px 0 0 15px;
 }
 
-.ol-overviewmap,
-.ol-attribution,
-.ol-scale-line {
-    margin-bottom: 70px;
+.ol-mouse-position {
+    margin: 30px 15px 0 0;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    padding: 3px;
+    background: rgba(0, 60, 136, .5);
+    background-clip: padding-box;
+    border: 3px solid rgba(255, 255, 255, .4);
+    border-radius: 4px;
 }
+
+.ol-full-screen {
+    margin: 75px 15px 0 0;
+}
+
+.layer-switcher {
+    margin: 70px 10px 0 0;
+}
+
+.ol-overviewmap {
+    margin: 0 0 120px 15px;
+}
+
+.ol-scale-line {
+    margin: 0 0 80px 15px;
+    background: rgba(0, 60, 136, .5);
+    padding: 3px;
+    background-clip: padding-box;
+    border: 3px solid rgba(255, 255, 255, .4);
+    border-radius: 4px;
+}
+
+.ol-attribution {
+    margin: 0 15px 80px 0;
+}
+
+/*
+* Popup
+*/
 
 .fade.in {
     opacity: 1
@@ -430,7 +466,7 @@ WEB GIS
 .popover-title {
     padding: 8px 14px;
     margin: 0;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: normal;
     line-height: 18px;
     background-color: #f7f7f7;
@@ -440,7 +476,7 @@ WEB GIS
 
 .popover-content {
     padding: 9px 14px;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .popover .arrow, .popover .arrow:after {
@@ -559,4 +595,32 @@ ABOUT US
 .team-member:hover .member-mail {
     bottom: 0;
     margin-bottom: 0;
+}
+
+/***********************************************************************************************************************
+DOWNLOAD
+***********************************************************************************************************************/
+
+.downloads {
+    margin-top: 50px;
+}
+
+.downloads a i {
+    font-size: 50px;
+    color: gray;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.downloads a i:hover {
+    color: #009688;
+}
+
+.downloads .download-link {
+    font-size: 25px
+}
+
+.downloads .download-link a {
+    font-weight: 500;
+    color: #009688;
 }
