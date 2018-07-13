@@ -28,21 +28,13 @@ var building_point = new ol.layer.Vector({
         image: new ol.style.RegularShape({
             fill: fill,
             stroke: stroke,
-            points: 4, // number of vertex
+            points: 8, // number of vertex
             radius: 4,
             angle: Math.PI
         })
     }),
-    maxResolution: 50
+    maxResolution: 15
 });
-/*
-var point = new ol.layer.Image({
-    title: 'sondrio point wms',
-    source: new ol.source.ImageWMS({
-        url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
-        params: {'LAYERS': 'user01_18:CENED_2.0_sondrio'}
-    })
-});*/
 
 var geotermal = new ol.layer.Image({
     title: 'Geothermal plants',
@@ -50,7 +42,7 @@ var geotermal = new ol.layer.Image({
         url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
         params: {'LAYERS': 'user01_18:geotermal_sondrio'}
     }),
-    maxResolution: 50
+    maxResolution: 100
 });
 
 var hydraulic = new ol.layer.Image({
@@ -79,7 +71,7 @@ var municipality = new ol.layer.Image({
         params: {'LAYERS': 'user01_18:sondrio_mun'}
     }),
     opacity: 0.5,
-    maxResolution: 110
+    maxResolution: 150
 });
 
 var province = new ol.layer.Image({
@@ -100,7 +92,7 @@ var building_footprint = new ol.layer.Image({
         url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
         params: {'LAYERS': 'user01_18:Sondrio_building_footprint'}
     }),
-    maxResolution: 20
+    maxResolution: 15
 });
 
 var point_lecco = new ol.layer.Image({
@@ -184,8 +176,6 @@ var map = new ol.Map({
 var layerSwitcher = new ol.control.LayerSwitcher({});
 map.addControl(layerSwitcher);
 
-
-
 var elementPopup = document.getElementById('popup');
 
 var popup = new ol.Overlay({
@@ -202,10 +192,13 @@ map.on('click', function (event) {
         var pixel = event.pixel;
         var coord = map.getCoordinateFromPixel(pixel);
         popup.setPosition(coord);
-        $(elementPopup).attr('title', 'Cened_2.0+_Info');
-        $(elementPopup).attr('data-content', '<b>Id: </b>' + feature.get('COD_APE') +
+        $(elementPopup).attr('title', 'Cened 2.0+ Info');
+        $(elementPopup).attr('data-content',
+            '<b>Id Certification: </b>' + feature.get('COD_APE') +
+            '</br><b>Date Certification: </b>'+ feature.get('DATA_INS') +
             '</br><b>Energetic Class: </b>' + feature.get('CLASSE_ENE')+
-            '</br><b>Energetic Vector: </b>'+ feature.get('VETTORE_EN'));
+            '</br><b>New Energetic Class Proposed: </b>'+ feature.get('RIQ_CLASSE')
+        );
         $(elementPopup).popover({'placement': 'top', 'html': true});
         $(elementPopup).popover('show');
     }
