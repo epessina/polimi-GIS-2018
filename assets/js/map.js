@@ -195,20 +195,28 @@ map.on('click', function (event) {
         $(elementPopup).attr('title', 'Cened 2.0+ Info');
         $(elementPopup).attr('data-content',
             '<b>Id Certification: </b>' + feature.get('COD_APE') +
-            '</br><b>Date Certification: </b>'+ feature.get('DATA_INS') +
-            '</br><b>Energetic Class: </b>' + feature.get('CLASSE_ENE')+
-            '</br><b>New Energetic Class Proposed: </b>'+ feature.get('RIQ_CLASSE')
+            '</br><b>Date Certification: </b>' + feature.get('DATA_INS') +
+            '</br><b>Energetic Class: </b>' + feature.get('CLASSE_ENE') +
+            '</br><b>New Energetic Class Proposed: </b>' + feature.get('RIQ_CLASSE')
         );
+        // $(elementPopup).addClass("test");
+        // $(elementPopup).append("<b>Id Certification: </b>" + feature.get('COD_APE') + "\n</br>" +
+        //     "<b>Date Certification: </b>" + feature.get('DATA_INS') + "\n</br>" +
+        //     "<b>Energetic Class: </b>" + feature.get('CLASSE_ENE') + "\n</br>" +
+        //     "<b>New Energetic Class Proposed: </b>" + feature.get('RIQ_CLASSE'));
         $(elementPopup).popover({'placement': 'top', 'html': true});
         $(elementPopup).popover('show');
     }
 });
 
-map.on('pointermove', function(e) { if (e.dragging) {
-    $(elementPopup).popover('destroy');
-    return; }
-    var pixel = map.getEventPixel(e.originalEvent);
-    var hit = map.hasFeatureAtPixel(pixel); map.getTarget().style.cursor = hit ? 'pointer' : '';
+map.on('pointermove', function (e) {
+    if (e.dragging) {
+        $(elementPopup).popover('destroy');
+        return;
+    }
+    var pixel                    = map.getEventPixel(e.originalEvent);
+    var hit                      = map.hasFeatureAtPixel(pixel);
+    map.getTarget().style.cursor = hit ? 'pointer' : '';
 });
 
 /*
