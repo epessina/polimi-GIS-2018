@@ -320,9 +320,9 @@ PROJECT
     color: #009688;
 }
 
-/***********************************************************************************************************************
-MAIN TECHNOLOGIES
-***********************************************************************************************************************/
+/*
+* Technologies
+*/
 
 .tech {
     text-align: center;
@@ -514,6 +514,52 @@ WEB GIS
 }
 
 /***********************************************************************************************************************
+DOWNLOAD
+***********************************************************************************************************************/
+
+.downloads {
+    margin-top: 50px;
+}
+
+.downloads a i {
+    font-size: 50px;
+    color: gray;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.downloads a i:hover {
+    color: #009688;
+}
+
+.downloads .download-link {
+    font-size: 25px
+}
+
+.downloads .download-link a {
+    font-weight: 500;
+    color: #009688;
+}
+
+.zip-ico {
+    margin-right: 1rem;
+}
+
+@media screen and (max-width: 991px) {
+    .downloads a i {
+        font-size: 50px;
+    }
+
+    .downloads .download-link {
+        font-size: 23px
+    }
+
+    .zip-ico {
+        margin-right: 21px;
+    }
+}
+
+/***********************************************************************************************************************
 ABOUT US
 ***********************************************************************************************************************/
 
@@ -595,32 +641,4 @@ ABOUT US
 .team-member:hover .member-mail {
     bottom: 0;
     margin-bottom: 0;
-}
-
-/***********************************************************************************************************************
-DOWNLOAD
-***********************************************************************************************************************/
-
-.downloads {
-    margin-top: 50px;
-}
-
-.downloads a i {
-    font-size: 50px;
-    color: gray;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-}
-
-.downloads a i:hover {
-    color: #009688;
-}
-
-.downloads .download-link {
-    font-size: 25px
-}
-
-.downloads .download-link a {
-    font-weight: 500;
-    color: #009688;
 }
