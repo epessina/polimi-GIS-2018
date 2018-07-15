@@ -1,7 +1,11 @@
+/**
+ * This file contains the code that manages the WebGIS.
+ */
+
 // Use strict mode to "secure" the script from syntax errors
 "use strict";
 
-// Add layers
+// Adds a vector layer through a WFM request using ajax to make it asynchronous.
 
 var vectorSource = new ol.source.Vector({
     loader: function (extent, resolution, projection) {

@@ -200,17 +200,34 @@
                 INSPIRE were required.
             </p>
             <p>
-                Once those knowledge was acquired, the first step in harmonizing the data was to link the simpler source
-                data model to the more complex target data model, matching attributes and values.
-                In order to visualize the attributes needed from the target data model and the corresponding attributes
-                in the source data model, a mapping table was created and, based on that, we were able to perform the
-                transformation using <a href="https://www.wetransform.to/products/halestudio/" target="_blank">Hale
-                Studio</a>, an open source data transformation program.
+                CENED data are <a href="http://www.cened.it/opendata_cenedplus2" target="_blank">downloadable</a>
+                in csv format for all Lombardy region. With the csv in hand we imported the
+                data in <a href="https://www.qgis.org/it/site/" target="_blank">QGIS</a> to visualize and correctly
+                georeference them.
             </p>
             <p>
-                The final output was a GML (Geography Markup Language) file, which can be downloaded
-                <a href="download.html">here</a>.
+                For the following operations we needed about 100 point features, so we cut the dataset using a
+                rectangular bounding box centered on our main city (Sondrio).
+                <br>
+                We obtained a bit more than 100 points and we saved them as shape file, downloadable
+                <a href="download.html" target="_blank">here</a>.
             </p>
+
+            <div style="margin-top: 50px">
+                <iframe width="100%" title="Database CENED+2 - Certificazione ENergetica degli EDifici" height="425px"
+                        src="https://www.dati.lombardia.it/w/bbky-sde5/a5ui-s7tq?cur=X-rnP0zZ4a-&from=6H1VHQWrw6g"
+                        frameborder="0" scrolling="no">
+
+                    <a href="https://www.dati.lombardia.it/Energia/Database-CENED-2-Certificazione-ENergetica-degli-E/bbky-sde5"
+                       title="Database CENED+2 - Certificazione ENergetica degli EDifici" target="_blank">
+                        Database CENED+2 - Certificazione ENergetica degli EDifici
+                    </a>
+
+                </iframe>
+
+                <p class="text-center"><a href="http://www.socrata.com/" target="_blank">Powered by Socrata</a></p>
+
+            </div>
 
 
             <div class="row">
@@ -223,22 +240,99 @@
             </div>
 
             <p>
-                Before starting the actual work, an understanding of the main goal of the INSPIRE Directive and the
-                study of both the source data model and sets given from CENED and the target data model and schema from
-                INSPIRE were required.
-            </p>
-            <p>
                 Once those knowledge was acquired, the first step in harmonizing the data was to link the simpler source
                 data model to the more complex target data model, matching attributes and values.
+            </p>
+
+            <h3 class="subsection">Mapping table</h3>
+
+            <p>
                 In order to visualize the attributes needed from the target data model and the corresponding attributes
-                in the source data model, a mapping table was created and, based on that, we were able to perform the
+                in the source data model, a mapping table was created starting from the EULF - Energy Pilot - UC1
+                <a href="http://inspire-sandbox.jrc.ec.europa.eu/energy-pilot/use-case-1/data-models/uml-html-viewer/"
+                   target="_blank">uml model</a>.
+            </p>
+            <p>
+                The process of compiling the map was based on two steps.
+            </p>
+            <p>
+                Firstly we were asked to transform the entities described in the uml to a table adding the relevant
+                attributes (e.g. the voidability, the cardinality, the type of the value). Particular attention had to
+                be made about the type of the attributes that can be a primitive (e.g. integer, string, etc), a
+                codelist, that is a fixed list of possible values, or another attribute table.
+            </p>
+            <p>
+                The second step was the association of all the attributes of the source model that had a corresponding
+                one in the target.
+            </p>
+
+            <!--<iframe src="https://docs.google.com/spreadsheets/d/1zGe3owtIzfCs3iwxZxDxV01D-NqjVXPEw7LBqcNwVbs/pubhtml?widget=true&amp;headers=true"-->
+            <!--style="width:100%;height:100%;"></iframe>-->
+
+            <!--<iframe width="100%" height="425px" frameborder="0" scrolling="no" title="title"-->
+            <!--src="https://docs.google.com/spreadsheets/d/1zGe3owtIzfCs3iwxZxDxV01D-NqjVXPEw7LBqcNwVbs/pubhtml?widget=true&amp;headers=true">-->
+            <!--</iframe>-->
+
+
+            <h3 class="subsection">Hale Studio</h3>
+
+            <p>
+                Based on the mapping table, we were able to perform the
                 transformation using <a href="https://www.wetransform.to/products/halestudio/" target="_blank">Hale
                 Studio</a>, an open source data transformation program.
+            </p>
+            <p>
+                As a preliminary operation we imported the source and the target schema as well as the source data in
+                order to have a live validation of the work. We also imported all the
+                <a href="http://inspire-sandbox.jrc.ec.europa.eu/codelist" target="_blank">codelists</a>
+                from the INSPIRE website.
+            </p>
+            <p>
+                Once we had all the needed data in hand we connected the two schemas with a <i>Retype</i> function.
+                <br>
+                After that, using various relations, we joined the attributes of the two tables.
+            </p>
+            <ul>
+                <li>
+                    We used <i>Rename</i> when the source and the target attributes had similar type.
+                </li>
+                <li>
+                    The <i>Classification</i> function was instead used when we needed to move from a multiple boolean
+                    attribute in the source to a unique attribute in the target. This type of transformation is based on
+                    a
+                    codelist and the Classification allowed us to link a true value in the source to the corresponding
+                    value
+                    in the codelist.
+                </li>
+                <li>
+                    We used <i>Assign</i> to put a value in the target schema that was not present in the source but was
+                    known for all the table.
+                    A slightly different version of the function, <i>Assign(Bound)</i> was also used in order to deal
+                    with
+                    the attributes containing some null values.
+                </li>
+                <li>
+                    <i>Formatted string</i> was used when we had to join multiple source attributes in one target
+                    attribute.
+                </li>
+                <li>
+                    Finally, in order to assign a unique id to the sub-table we used <i>Generate Unique Id</i> or <i>Generate
+                    Sequential Id</i>.
+                </li>
+            </ul>
+            <p>
+                Once all the attributes was link we performed a validation of the final schema using both a <i>project
+                validator</i> and an <i>XML validator</i>.
+                <br>
+                The validation highlights no errors but only a couple of
+                warning related to the fact that we added some custom values to a few codelists to better fit the source
+                data.
             </p>
             <p>
                 The final output was a GML (Geography Markup Language) file, which can be downloaded
                 <a href="download.html">here</a>.
             </p>
+
 
             <div class="row">
                 <div class="col-12">
@@ -256,16 +350,43 @@
             </p>
             <p>
                 Using <a href="https://openlayers.org/" target="_blank">OpenLayers</a> we set up a
-                <a href="webgis.html" target="_blank">WebGIS</a> that shows a visualization of the original CENED
-                dataset - consisting in a selection of 103 buildings in the centre of Sondrio -, the boundaries of the
-                municipality and of the province and the building footprint.
-                <br>
-                As ancillary layers one can find the dams, the hydraulic regulation works and the geothermal plants in
-                the area. The choice had fallen upon those constructions because they either provide or have the
-                potential to provide electric or heat energy for housing.
-                <br>
-                The map is completed by the CENED dataset of Lecco and a choice of four different basemaps.
+                <a href="webgis.html" target="_blank">WebGIS</a> that shows a visualization of:
             </p>
+            <ul>
+                <li>
+                    Original CENED dataset, consisting in a selection of 103 buildings in the centre of Sondrio,
+                    provided like WFS. This allows the user to get some information about the building by clicking on
+                    the corresponding point. The information showed are about the address of the building (field <i>INDIRIZZO</i>),
+                    the id of the certificate (field <i>COD_APE</i>), the energetic class and in some case the proposed
+                    one (fields <i>CLASSE_EN</i> and <i>RIQ_CLASSE</i>).
+                </li>
+                <li>
+                    The boundaries of the municipality and of the province of Sondrio at 2016 taken from the
+                    <a href="https://www.istat.it/it/archivio/124086" target="_blank">ISTAT</a>
+                    (Istituto Italiano di Statistica Italian Institute of Statistics) Website.
+                </li>
+                <li>
+                    The building footprint cut in the center area of Sondrio taken from the the
+                    <a href="http://www.geoportale.regione.lombardia.it/en" target="_blank">Lombardy Region
+                        Geoportal</a>
+                    Website named <i>Database topographico edificato</i>.
+                </li>
+                <li>
+                    Finally, as ancillary layers one can find the dams, the hydraulic regulation works and the geothermal
+                    plants in the area of Sondrio. The choice had fallen upon those constructions because they either
+                    provide or have the potential to provide electric or heat energy for housing. This data are
+                    from the Lombardy Geoportal Region too.
+                </li>
+            </ul>
+            <p>
+                The map is completed by the CENED dataset of Lecco and a choice of four different basemaps:
+            </p>
+            <ul>
+                <li>OpenStreetMap (OSM);</li>
+                <li>Bing Maps - Roads;</li>
+                <li>Bing Maps - Aerial with labels;</li>
+                <li>Stamen toner.</li>
+            </ul>
 
         </div>
 

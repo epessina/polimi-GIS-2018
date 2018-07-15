@@ -320,6 +320,12 @@ PROJECT
     color: #009688;
 }
 
+.subsection {
+    text-align: center;
+    font-weight: 400;
+    margin: 50px 0 15px 0;
+}
+
 /*
 * Technologies
 */
