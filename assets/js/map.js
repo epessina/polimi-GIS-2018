@@ -1,3 +1,8 @@
+/*!
+GIS Project 2018
+Group 1: Pessina Edoardo, Stucchi Lorenzo, Vestgaard Mathias
+ */
+
 /**
  * This file contains the code that manages the WebGIS.
  */
@@ -5,8 +10,7 @@
 // Use strict mode to "secure" the script from syntax errors
 "use strict";
 
-// Adds a vector layer through a WFM request using ajax to make it asynchronous.
-
+// Loads the WFS of the buildings using ajax to make an asynchronous request.
 var vectorSource = new ol.source.Vector({
     loader: function (extent, resolution, projection) {
         var url = 'http://ows3.como.polimi.it:8080/geoserver/ows?service=WFS' +
@@ -37,7 +41,8 @@ var building_point = new ol.layer.Vector({
     maxResolution: 15
 });
 
-var geotermal = new ol.layer.Image({
+// Loads the WMS of the geothermal plants.
+var geothermal = new ol.layer.Image({
     title: 'Geothermal plants',
     source: new ol.source.ImageWMS({
         url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
@@ -46,8 +51,9 @@ var geotermal = new ol.layer.Image({
     maxResolution: 100
 });
 
+// Loads the WMS of the hydraulic regulation works.
 var hydraulic = new ol.layer.Image({
-    title: 'Hydraulic regolation works',
+    title: 'Hydraulic regulation works',
     source: new ol.source.ImageWMS({
         url: 'http://ows3.como.polimi.it:8080/geoserver/wms',
         params: {'LAYERS': 'user01_18:hydraulic_sondrio'}
@@ -55,6 +61,7 @@ var hydraulic = new ol.layer.Image({
     maxResolution: 50
 });
 
+// Loads the WMS of the dams.
 var dams = new ol.layer.Image({
     title: 'Dams',
     source: new ol.source.ImageWMS({
@@ -65,6 +72,7 @@ var dams = new ol.layer.Image({
 
 });
 
+// Loads the WMS of the municipality boundary.
 var municipality = new ol.layer.Image({
     title: 'Municipality boundary',
     source: new ol.source.ImageWMS({
@@ -76,6 +84,7 @@ var municipality = new ol.layer.Image({
     maxResolution: 150
 });
 
+// Loads the WMS of the province boundary.
 var province = new ol.layer.Image({
     title: 'Province boundary',
     source: new ol.source.ImageWMS({
@@ -88,6 +97,7 @@ var province = new ol.layer.Image({
     visible: true
 });
 
+// Loads the WMS of the building footprint.
 var building_footprint = new ol.layer.Image({
     title: 'Building footprint',
     source: new ol.source.ImageWMS({
@@ -97,6 +107,7 @@ var building_footprint = new ol.layer.Image({
     maxResolution: 5
 });
 
+// Loads the WMS of the dataset of Lecco from Group 5.
 var point_lecco = new ol.layer.Image({
     title: 'Cened 2.0+ data (Lecco province)',
     source: new ol.source.ImageWMS({
@@ -107,7 +118,7 @@ var point_lecco = new ol.layer.Image({
     maxResolution: 100
 });
 
-// Add basemap
+// Loads several basemaps.
 var OSM = new ol.layer.Tile({
     title: 'OpenStreetMap',
     type: 'base',
@@ -144,7 +155,7 @@ var stamenToner = new ol.layer.Tile({
     })
 });
 
-// Add map
+// Creates the map object, adds the basemaps and the layers, sets the default view and the controls.
 var map = new ol.Map({
     target: document.getElementById('map'),
     layers: [
@@ -155,7 +166,7 @@ var map = new ol.Map({
         new ol.layer.Group({
             title: 'Overlay Layers',
             layers: [province, municipality, point_lecco, building_footprint,
-                geotermal, hydraulic, dams, building_point]
+                geothermal, hydraulic, dams, building_point]
         })
     ],
     view: new ol.View({
@@ -173,11 +184,12 @@ var map = new ol.Map({
     ])
 });
 
-// Additional comand
-// Button for change the layer
+
+// Adds the layer switcher.
 var layerSwitcher = new ol.control.LayerSwitcher({});
 map.addControl(layerSwitcher);
 
+// Creates a popup to display the data of the WFS layer.
 var elementPopup = document.getElementById('popup');
 
 var popup = new ol.Overlay({

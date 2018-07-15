@@ -1,3 +1,8 @@
+/*!
+GIS Project 2018
+Group 1: Pessina Edoardo, Stucchi Lorenzo, Vestgaard Mathias
+ */
+
 /**
  * This function is called once all the DOM elements are ready to be used.
  * It controls the behavior of the icons and the text of the main technology. When the user
