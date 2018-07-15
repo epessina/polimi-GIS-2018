@@ -154,7 +154,8 @@ var map = new ol.Map({
         }),
         new ol.layer.Group({
             title: 'Overlay Layers',
-            layers: [province, municipality, point_lecco, building_footprint, geotermal, hydraulic, dams, building_point]
+            layers: [province, municipality, point_lecco, building_footprint,
+                geotermal, hydraulic, dams, building_point]
         })
     ],
     view: new ol.View({
@@ -202,7 +203,8 @@ map.on('click', function (event) {
             text = feature.get('RIQ_CLASSE');
 
         $(elementPopup).attr('data-content',
-            '<b>Id Certification: </b>' + feature.get('COD_APE') +
+            '<b>Building Address: </b></br>' + feature.get('INDIRIZZO') +
+            '</br><b>Id Certification: </b>' + feature.get('COD_APE') +
             '</br><b>Date Certification: </b>' + feature.get('DATA_INS') +
             '</br><b>Energetic Class: </b>' + feature.get('CLASSE_ENE') +
             '</br><b>New Energetic Class Proposed: </b>' + text
