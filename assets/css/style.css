@@ -333,6 +333,10 @@ PROJECT
 }
 
 .tech:hover {
+    cursor: pointer;
+}
+
+.selected-tech {
     -webkit-transform: translateY(-5px);
     transform: translateY(-5px)
 }
@@ -349,7 +353,7 @@ PROJECT
     transition: 0.3s;
 }
 
-.tech:hover .tech-icon img {
+.selected-tech .tech-icon img {
     -webkit-filter: grayscale(0);
     filter: grayscale(0)
 }
@@ -361,6 +365,10 @@ PROJECT
 
 .tech a {
     color: black;
+}
+
+.technology-text {
+    min-height: 150px;
 }
 
 /***********************************************************************************************************************
