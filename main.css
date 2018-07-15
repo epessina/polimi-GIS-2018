@@ -164,8 +164,12 @@ header {
     width: 100%;
     position: relative;
     z-index: 1;
-    background: url(../img/hero.png) bottom center;
+    background: url(hero.png) bottom center;
     background-size: cover;
+}
+
+.hero .container {
+    margin-top: 10%;
 }
 
 .hero-text {
@@ -199,6 +203,30 @@ header {
 .hero .first-button {
     margin-right: 100px;
 }
+
+@media screen and (max-width: 767px){
+    .hero-text {
+        font-size: 60px;
+    }
+
+    .hero-text span {
+        font-size: 30px;
+    }
+
+    .tagline {
+        font-size: 20px;
+    }
+
+    .hero .first-button {
+        margin-right: 10px;
+    }
+
+    .hero .btn {
+        margin-top: 40px;
+        font-size: 20px;
+    }
+}
+
 
 /***********************************************************************************************************************
 PAGES HEADER
@@ -349,6 +377,10 @@ PROJECT
 * Technologies
 */
 
+.tech-row {
+    padding-bottom: 70px;
+}
+
 .tech {
     text-align: center;
     -webkit-transition: 0.3s;
@@ -394,6 +426,23 @@ PROJECT
 
 .technology-text {
     min-height: 150px;
+}
+
+@media screen and (max-width: 991px){
+    .tech h4 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .tech h4 {
+        font-size: 15px;
+    }
+
+    .tech-row {
+        padding-bottom: 50px;
+    }
+
 }
 
 /***********************************************************************************************************************
