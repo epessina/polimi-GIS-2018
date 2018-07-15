@@ -169,7 +169,7 @@
             <p>
                 The main goal of the project was to harmonize data flows related to energy saving policies for buildings
                 located in the centre of <a href="https://en.wikipedia.org/wiki/Sondrio" target="_blank">Sondrio</a>,
-                one of the provincial capital of Lombardy region in Italy.
+                one of the provincial capitals of Lombardy region in Italy.
             </p>
             <p>
                 In particular, the two objectives of the work were:
@@ -180,7 +180,7 @@
                     data model;
                 </li>
                 <li>
-                    show the CNED dataset of Sondrio together with additional ancillary information using a WebGIS.
+                    show the CENED dataset of Sondrio together with additional ancillary information using a WebGIS.
                 </li>
             </ul>
 
@@ -201,7 +201,7 @@
             </p>
             <p>
                 CENED data are <a href="http://www.cened.it/opendata_cenedplus2" target="_blank">downloadable</a>
-                in csv format for all Lombardy region. With the csv in hand we imported the
+                in csv format for the whole region of Lombardy. With the csv in hand, we imported the
                 data in <a href="https://www.qgis.org/it/site/" target="_blank">QGIS</a> to visualize and correctly
                 georeference them.
             </p>
@@ -240,7 +240,7 @@
             </div>
 
             <p>
-                Once those knowledge was acquired, the first step in harmonizing the data was to link the simpler source
+                Once this knowledge was acquired, the first step in harmonizing the data was to link the simpler source
                 data model to the more complex target data model, matching attributes and values.
             </p>
 
@@ -258,11 +258,11 @@
             <p>
                 Firstly we were asked to transform the entities described in the uml to a table adding the relevant
                 attributes (e.g. the voidability, the cardinality, the type of the value). Particular attention had to
-                be made about the type of the attributes that can be a primitive (e.g. integer, string, etc), a
+                be given to the type of the attributes, which can be a primitive (e.g. integer, string, etc), a
                 codelist, that is a fixed list of possible values, or another attribute table.
             </p>
             <p>
-                The second step was the association of all the attributes of the source model that had a corresponding
+                The second step was to associate all the attributes of the source model that had a corresponding
                 one in the target.
             </p>
 
@@ -279,7 +279,7 @@
             <p>
                 Based on the mapping table, we were able to perform the
                 transformation using <a href="https://www.wetransform.to/products/halestudio/" target="_blank">Hale
-                Studio</a>, an open source data transformation program.
+                Studio</a>, an open source data transformation software.
             </p>
             <p>
                 As a preliminary operation we imported the source and the target schema as well as the source data in
@@ -294,13 +294,13 @@
             </p>
             <ul>
                 <li>
-                    We used <i>Rename</i> when the source and the target attributes had similar type.
+                    We used <i>Rename</i> when the source and the target attributes were semantically equal.
                 </li>
                 <li>
                     The <i>Classification</i> function was instead used when we needed to move from a multiple boolean
                     attribute in the source to a unique attribute in the target. This type of transformation is based on
                     a
-                    codelist and the Classification allowed us to link a true value in the source to the corresponding
+                    codelist, and the Classification allowed us to link a true value in the source to the corresponding
                     value
                     in the codelist.
                 </li>
@@ -321,11 +321,11 @@
                 </li>
             </ul>
             <p>
-                Once all the attributes was link we performed a validation of the final schema using both a <i>project
+                Once all the attributes had been linked, we performed a validation of the final schema using both a <i>project
                 validator</i> and an <i>XML validator</i>.
                 <br>
-                The validation highlights no errors but only a couple of
-                warning related to the fact that we added some custom values to a few codelists to better fit the source
+                The validation highlighted no errors, but only a couple of
+                warnings related to the fact that we added some custom values to a few codelists to better fit the source
                 data.
             </p>
             <p>
@@ -344,24 +344,24 @@
             </div>
 
             <p>
-                The last part of the project consisted in creating a WebGIS to visualize the transformed data along with
+                The last part of the project consisted of creating a WebGIS to visualize the transformed data along with
                 various basemaps and ancillary datasets related to the energy topic, all published as WMS or WFS using
                 <a href="http://geoserver.org/" target="_blank">GeoServer</a>.
             </p>
             <p>
                 Using <a href="https://openlayers.org/" target="_blank">OpenLayers</a> we set up a
-                <a href="webgis.html" target="_blank">WebGIS</a> that shows a visualization of:
+                <a href="webgis.html" target="_blank">WebGIS</a> which shows a visualization of:
             </p>
             <ul>
                 <li>
-                    Original CENED dataset, consisting in a selection of 103 buildings in the centre of Sondrio,
-                    provided like WFS. This allows the user to get some information about the building by clicking on
+                    The original CENED dataset, consisting of a selection of 103 buildings in the centre of Sondrio,
+                    provided as WFS. This allows the user to get some information about the building by clicking on
                     the corresponding point. The information showed are about the address of the building (field <i>INDIRIZZO</i>),
-                    the id of the certificate (field <i>COD_APE</i>), the energetic class and in some case the proposed
+                    the id of the certificate (field <i>COD_APE</i>), the energetic class and in some cases the proposed
                     one (fields <i>CLASSE_EN</i> and <i>RIQ_CLASSE</i>).
                 </li>
                 <li>
-                    The boundaries of the municipality and of the province of Sondrio at 2016 taken from the
+                    The boundaries of the municipality and of the province of Sondrio in 2016 taken from the
                     <a href="https://www.istat.it/it/archivio/124086" target="_blank">ISTAT</a>
                     (Istituto Italiano di Statistica Italian Institute of Statistics) Website.
                 </li>

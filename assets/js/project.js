@@ -19,14 +19,14 @@ $(function () {
     var geoServer     = $('#geoserver');
     var geoServerText = "<p><a href=\"http://geoserver.org/\" target=\"_blank\">GeoServer</a>" +
         " is an open source server for sharing geospatial data." +
-        " It is design for interoperability and it allows to publish data from any" +
+        " It is designed for interoperability and it allows to publish data from any" +
         " major spatial data source using open standards.<br>All the layers in our" +
         " WebGIS are datasets published on GeoServer as WMS or WFS.</p>";
 
     var openLayers     = $('#openlayers');
     var openLayersText = "<p><a href=\"https://openlayers.org/\" target=\"_blank\">OpenLayers</a> is" +
         " an open source software that allows to put dynamic" +
-        " maps in any web page. It can display mop tiles, vector data and markers" +
+        " maps in any web page. It can display map tiles, vector data and markers" +
         " loaded from any source.<br>Our WebGIS is created entirely using OpenLayers.</p>";
 
     var haleStudio     = $('#hale');
