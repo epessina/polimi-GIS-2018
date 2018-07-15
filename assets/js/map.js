@@ -203,7 +203,7 @@ map.on('click', function (event) {
             text = feature.get('RIQ_CLASSE');
 
         $(elementPopup).attr('data-content',
-            '<b>Building Address: </b></br>' + feature.get('INDIRIZZO') +
+            '<b>Building Address: </b>' + feature.get('INDIRIZZO') +
             '</br><b>Id Certification: </b>' + feature.get('COD_APE') +
             '</br><b>Date Certification: </b>' + feature.get('DATA_INS') +
             '</br><b>Energetic Class: </b>' + feature.get('CLASSE_ENE') +
