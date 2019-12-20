@@ -1,0 +1,19 @@
+{
+  "name": "polimi-gis-2018",
+  "version": "1.0.0",
+  "description": "This repository contains the project of the course *Geographic Information System* teached by Professor Brovelli in the academic year 2017/2018.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/epessina/polimi-GIS-2018.git"
+  },
+  "author": "Edoardo Pessina, Lorenzo Stucchi, Mathias Vestgaard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/epessina/polimi-GIS-2018/issues"
+  },
+  "homepage": "https://github.com/epessina/polimi-GIS-2018#readme",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1"
+  }
+}
