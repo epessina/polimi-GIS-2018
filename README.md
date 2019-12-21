@@ -104,7 +104,7 @@ data transformation. We used this software to transform the dataset from CENED t
 
 1. Install the last version of [Node.js](https://nodejs.org/it/)
 2. Clone this repository
-3. Inside the directory where you have cloned the repository run `npm init`
+3. Inside the directory where you have cloned the repository run `npm install`
 4. To build the website run `npm start`
 
 
