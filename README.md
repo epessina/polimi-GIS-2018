@@ -8,6 +8,7 @@
 - [Transformation](#transformation)
 - [webGIS](#webgis)
 - [Main technologies](#main-technologies)
+- [Set up and running](#set-up-and-running)
 - [About us](#about-us)
 - [License](#license)
 
@@ -97,6 +98,14 @@ OpenLayers.
 
 - [Hale Studio](https://www.wetransform.to/products/halestudio/): an open source software for fast and interactive
 data transformation. We used this software to transform the dataset from CENED to the INSPIRE compliant format.
+
+
+### Set up and running
+
+1. Install the last version of [Node.js](https://nodejs.org/it/)
+2. Clone this repository
+3. Inside the directory where you have cloned the repository run `npm init`
+4. To build the website run `npm start`
 
 
 ### About us
