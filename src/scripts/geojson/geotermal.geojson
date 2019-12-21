@@ -1,0 +1,27 @@
+{
+"type": "FeatureCollection",
+"name": "geotermal",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32632" } },
+"features": [
+{ "type": "Feature", "properties": { "ID_GIS": "RSG_616", "PR": "SO", "COMUNE": "Valdisotto", "TIPO_IMPIA": "PDCgeo", "UTM32WGS84": 605532, "UTM32WGS_1": 5145442, "N_SG": 3 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 605532.0, 5145442.0 ] ] } },
+{ "type": "Feature", "properties": { "ID_GIS": "RSG_617", "PR": "SO", "COMUNE": "Chiavenna", "TIPO_IMPIA": "PDCgeo", "UTM32WGS84": 531200, "UTM32WGS_1": 5129790, "N_SG": 10 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 531200.0, 5129790.0 ] ] } },
+{ "type": "Feature", "properties": { "ID_GIS": "RSG_618", "PR": "SO", "COMUNE": "Tirano", "TIPO_IMPIA": "PDCgeo", "UTM32WGS84": 588725, "UTM32WGS_1": 5117390, "N_SG": 4 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 588725.0, 5117390.0 ] ] } },
+{ "type": "Feature", "properties": { "ID_GIS": "RSG_619", "PR": "SO", "COMUNE": "Valdidentro", "TIPO_IMPIA": "PDCgeo", "UTM32WGS84": 604910, "UTM32WGS_1": 5148411, "N_SG": 5 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 604910.0, 5148411.0 ] ] } },
+{ "type": "Feature", "properties": { "ID_GIS": "RSG_620", "PR": "SO", "COMUNE": "Sondrio", "TIPO_IMPIA": "PDCgeo", "UTM32WGS84": 567970, "UTM32WGS_1": 5113520, "N_SG": 15 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 567970.0, 5113520.0 ] ] } },
+{ "type": "Feature", "properties": { "ID_GIS": "RSG_621", "PR": "SO", "COMUNE": "Chiavenna", "TIPO_IMPIA": "PDCgeo", "UTM32WGS84": 531205, "UTM32WGS_1": 5129735, "N_SG": 2 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 531205.0, 5129735.0 ] ] } },
+{ "type": "Feature", "properties": { "ID_GIS": "RSG_622", "PR": "SO", "COMUNE": "Lovero", "TIPO_IMPIA": "PDCgeo", "UTM32WGS84": 594609, "UTM32WGS_1": 5120390, "N_SG": 3 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 594609.0, 5120390.0 ] ] } },
+{ "type": "Feature", "properties": { "ID_GIS": "RSG_623", "PR": "SO", "COMUNE": "Chiavenna", "TIPO_IMPIA": "PDCgeo", "UTM32WGS84": 531205, "UTM32WGS_1": 5129735, "N_SG": 13 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 531205.0, 5129735.0 ] ] } },
+{ "type": "Feature", "properties": { "ID_GIS": "RSG_625", "PR": "SO", "COMUNE": "Livigno", "TIPO_IMPIA": "PDCgeo", "UTM32WGS84": 587856, "UTM32WGS_1": 5154254, "N_SG": 2 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 587856.0, 5154254.0 ] ] } },
+{ "type": "Feature", "properties": { "ID_GIS": "RSG_626", "PR": "SO", "COMUNE": "Chiesa in Valmalenco", "TIPO_IMPIA": "PDCgeo", "UTM32WGS84": 565016, "UTM32WGS_1": 5126299, "N_SG": 3 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 565016.0, 5126299.0 ] ] } },
+{ "type": "Feature", "properties": { "ID_GIS": "RSG_627", "PR": "SO", "COMUNE": "Prata Camportaccio", "TIPO_IMPIA": "PDCgeo", "UTM32WGS84": 530354, "UTM32WGS_1": 5127438, "N_SG": 3 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 530354.0, 5127438.0 ] ] } },
+{ "type": "Feature", "properties": { "ID_GIS": "RSG_628", "PR": "SO", "COMUNE": "Grosio", "TIPO_IMPIA": "PDCgeo", "UTM32WGS84": 598673, "UTM32WGS_1": 5128493, "N_SG": 4 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 598673.0, 5128493.0 ] ] } },
+{ "type": "Feature", "properties": { "ID_GIS": "RSG_629", "PR": "SO", "COMUNE": "Villa di Tirano", "TIPO_IMPIA": "PDCgeo", "UTM32WGS84": 587541, "UTM32WGS_1": 5117422, "N_SG": 2 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 587541.0, 5117422.0 ] ] } },
+{ "type": "Feature", "properties": { "ID_GIS": "RSG_630", "PR": "SO", "COMUNE": "Villa di Tirano", "TIPO_IMPIA": "PDCgeo", "UTM32WGS84": 587430, "UTM32WGS_1": 5116781, "N_SG": 2 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 587430.0, 5116781.0 ] ] } },
+{ "type": "Feature", "properties": { "ID_GIS": "RSG_631", "PR": "SO", "COMUNE": "Chiuro", "TIPO_IMPIA": "PDCgeo", "UTM32WGS84": 576207, "UTM32WGS_1": 5113319, "N_SG": 3 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 576207.0, 5113319.0 ] ] } },
+{ "type": "Feature", "properties": { "ID_GIS": "RSG_632", "PR": "SO", "COMUNE": "Lovero", "TIPO_IMPIA": "PDCgeo", "UTM32WGS84": 595150, "UTM32WGS_1": 5120691, "N_SG": 2 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 595150.0, 5120691.0 ] ] } },
+{ "type": "Feature", "properties": { "ID_GIS": "RSG_633", "PR": "SO", "COMUNE": "Tirano", "TIPO_IMPIA": "PDCgeo", "UTM32WGS84": 589613, "UTM32WGS_1": 5118591, "N_SG": 2 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 589613.0, 5118591.0 ] ] } },
+{ "type": "Feature", "properties": { "ID_GIS": "RSG_634", "PR": "SO", "COMUNE": "Villa di Tirano", "TIPO_IMPIA": "PDCgeo", "UTM32WGS84": 587932, "UTM32WGS_1": 5117966, "N_SG": 2 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 587932.0, 5117966.0 ] ] } },
+{ "type": "Feature", "properties": { "ID_GIS": "RSG_635", "PR": "SO", "COMUNE": "Bormio", "TIPO_IMPIA": "PDCgeo", "UTM32WGS84": 604803, "UTM32WGS_1": 5146605, "N_SG": 2 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 604803.0, 5146605.0 ] ] } },
+{ "type": "Feature", "properties": { "ID_GIS": "RSG_636", "PR": "SO", "COMUNE": "Bormio", "TIPO_IMPIA": "PDCgeo", "UTM32WGS84": 605264, "UTM32WGS_1": 5146985, "N_SG": 4 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 605264.0, 5146985.0 ] ] } }
+]
+}

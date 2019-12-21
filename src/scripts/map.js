@@ -9,6 +9,8 @@ Group 1: Pessina Edoardo, Stucchi Lorenzo, Vestgaard Mathias
 
 // Use strict mode to "secure" the script from syntax errors
 "use strict";
+/*
+    Old version
 
 // Loads the WFS of the buildings using ajax to make an asynchronous request.
 var vectorSource = new ol.source.Vector({
@@ -117,6 +119,7 @@ var point_lecco = new ol.layer.Image({
     visible: false,
     maxResolution: 100
 });
+*/
 
 // Loads several basemaps.
 var OSM = new ol.layer.Tile({
@@ -163,11 +166,12 @@ var map = new ol.Map({
             title: 'Basemaps',
             layers: [stamenToner, bingAerialWithLabels, bingRoads, OSM]
         }),
+        /*
         new ol.layer.Group({
             title: 'Overlay Layers',
             layers: [province, municipality, point_lecco, building_footprint,
                 geothermal, hydraulic, dams, building_point]
-        })
+        })*/
     ],
     view: new ol.View({
         center: ol.proj.fromLonLat([9.87405, 46.16944]),
@@ -197,7 +201,7 @@ var popup = new ol.Overlay({
 });
 
 map.addOverlay(popup);
-
+/*
 map.on('click', function (event) {
     var feature = map.forEachFeatureAtPixel(event.pixel, function (feature, layer) {
         return feature;
@@ -235,3 +239,4 @@ map.on('pointermove', function (e) {
     var hit                      = map.hasFeatureAtPixel(pixel);
     map.getTarget().style.cursor = hit ? 'pointer' : '';
 });
+*/
