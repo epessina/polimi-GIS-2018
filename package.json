@@ -2,6 +2,9 @@
   "name": "polimi-gis-2018",
   "version": "1.0.0",
   "description": "This repository contains the project of the course *Geographic Information System* teached by Professor Brovelli in the academic year 2017/2018.",
+  "scripts": {
+    "start": "parcel src/index.html"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/epessina/polimi-GIS-2018.git"
@@ -14,6 +17,14 @@
   "homepage": "https://github.com/epessina/polimi-GIS-2018#readme",
   "dependencies": {
     "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1"
+    "components": "^0.1.0",
+    "global.css": "^1.1.0",
+    "jquery": "^3.4.1",
+    "nav.css": "^1.0.0",
+    "normalize.css": "^8.0.1",
+    "popper.js": "^1.16.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
   }
 }

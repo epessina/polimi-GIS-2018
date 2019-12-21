@@ -1,568 +1,537 @@
 <!DOCTYPE html>
 
-<!--
-GIS Project 2018
-Group 1: Pessina Edoardo, Stucchi Lorenzo, Vestgaard Mathias
--->
-
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<title>The project</title>
+	
+	<!-- Font Awesome Free 5.0.13 -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+		  integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="../styles/project.css" type="text/css">
 
-    <title>The project</title>
-
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
-
-    <!-- Bootstrap 4.1.1 -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
-    <!-- Font Awesome Free 5.0.13 -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="main.css" type="text/css">
 </head>
 
 <body>
 
+
 <!-- Navigation bar -->
-<div class="nav-menu fixed-top">
-
-    <div class="container">
-
-        <div class="row">
-
-            <div class="col-md-12">
-
-                <nav class="navbar navbar-dark navbar-expand-md">
-
-                    <a class="navbar-brand" href="index.html">GIS Project <span>01</span></a>
-
-                    <button class="navbar-toggler"
-                            type="button"
-                            data-toggle="collapse"
-                            data-target="#navbar"
-                            aria-controls="navbar"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation">
-
-                        <span class="navbar-toggler-icon"></span>
-
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbar">
-
-                        <ul class="navbar-nav ml-auto">
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.html">HOME</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#">PROJECT<span class="sr-only">(current)</span></a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="webgis.html">WEBGIS</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="download.html">DOWNLOAD</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="about-us.html">ABOUT US</a>
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </nav>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-<header class="header-bg">
-
-    <div class="container header-content">
-
-        <h1>The Project</h1>
-        <div class="line-shape-heading"></div>
-
-    </div>
-
-</header>
-
-<!-- Project description -->
-<div class="section-padding">
-
-    <div class="container">
-
-        <div class="text">
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading first-heading text-center">
-                        <h2>Introduction</h2>
-                        <div class="line-shape"></div>
-                    </div>
-                </div>
-            </div>
-
-            <p>
-                The work presented in this website is part of a project called
-                <a href="http://www.gicases.eu/" target="_blank">giCASES</a> whose objective is to create a
-                University-Enterprise Alliance for a Spatially Enabled Society.
-            </p>
-            <p>
-                This Knowledge Alliance is co-funded by the
-                <a href="http://www.erasmusplus.it/" target="_blank">Erasmus+</a> programme of the European Union that
-                involves
-                various European universities – and Politecnico di Milano among them - with the purpose of reducing the
-                gap between the knowledge students obtain while studying and the knowledge required once they start
-                working. The idea is that this goal can be achieved through a collaboration with relevant companies
-                presenting real life cases for the students to solve.
-            </p>
-            <p>
-                For this project, the students of the Geographic Information System course of professor Brovelli teamed
-                up with <a href="https://www.epsilon-italia.it/" target="_blank">Epsilon Italia</a> to develop the case
-                study <a href="https://inspire.ec.europa.eu/sites/default/files/presentations/02_gicases_case_study.pdf"
-                         target="_blank">CS5 - Harmonizing data flows in Energy Saving EU policies.</a>
-            </p>
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <h2>INSPIRE</h2>
-                        <div class="line-shape"></div>
-                    </div>
-                </div>
-            </div>
-
-            <p>
-                The cornerstone of the project is the
-                <a href="https://inspire.ec.europa.eu/" target="_blank">INSPIRE</a>
-                Directive with a focus on how states of the European Union are required to transform their data into an
-                INSPIRE compliant format.
-            </p>
-            <p>
-                This will lead to the creation of a common spatial data infrastructure, enabling the sharing of spatial
-                information between organisations and countries all over Europe and assisting them in policy-making
-                across boundaries.
-            </p>
-
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <h2>The work</h2>
-                        <div class="line-shape"></div>
-                    </div>
-                </div>
-            </div>
-
-            <p>
-                The main goal of the project was to harmonize data flows related to energy saving policies for buildings
-                located in the centre of <a href="https://en.wikipedia.org/wiki/Sondrio" target="_blank">Sondrio</a>,
-                one of the provincial capitals of Lombardy region in Italy.
-            </p>
-            <p>
-                In particular, the two objectives of the work were:
-            </p>
-            <ul>
-                <li>perform a transformation of the <a href="http://www.cened.it/home" target="_blank">CENED</a>
-                    (Certificazione ENergetica degli EDifici) dataset according to the extended INSPIRE Building 2D core
-                    data model;
-                </li>
-                <li>
-                    show the CENED dataset of Sondrio together with additional ancillary information using a WebGIS.
-                </li>
-            </ul>
-
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <h2>The data pre-processing </h2>
-                        <div class="line-shape"></div>
-                    </div>
-                </div>
-            </div>
-
-            <p>
-                Before starting the actual work, an understanding of the main goal of the INSPIRE Directive and the
-                study of both the source data model and sets given from CENED and the target data model and schema from
-                INSPIRE were required.
-            </p>
-            <p>
-                CENED data are <a href="http://www.cened.it/opendata_cenedplus2" target="_blank">downloadable</a>
-                in csv format for the whole region of Lombardy. With the csv in hand, we imported the
-                data in <a href="https://www.qgis.org/it/site/" target="_blank">QGIS</a> to visualize and correctly
-                georeference them.
-            </p>
-            <p>
-                For the following operations we needed about 100 point features, so we cut the dataset using a
-                rectangular bounding box centered on our main city (Sondrio).
-                <br>
-                We obtained a bit more than 100 points and we saved them as shape file, downloadable
-                <a href="download.html" target="_blank">here</a>.
-            </p>
-
-            <div class="frame">
-                <iframe width="100%" title="Database CENED+2 - Certificazione ENergetica degli EDifici" height="425px"
-                        src="https://www.dati.lombardia.it/w/bbky-sde5/a5ui-s7tq?cur=X-rnP0zZ4a-&from=6H1VHQWrw6g"
-                        frameborder="0" scrolling="no">
-
-                    <a href="https://www.dati.lombardia.it/Energia/Database-CENED-2-Certificazione-ENergetica-degli-E/bbky-sde5"
-                       title="Database CENED+2 - Certificazione ENergetica degli EDifici" target="_blank">
-                        Database CENED+2 - Certificazione ENergetica degli EDifici
-                    </a>
-
-                </iframe>
-
-                <p class="text-center"><a href="http://www.socrata.com/" target="_blank">Powered by Socrata</a></p>
-
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <h2>The transformation</h2>
-                        <div class="line-shape"></div>
-                    </div>
-                </div>
-            </div>
-
-            <p>
-                Once this knowledge was acquired, the first step in harmonizing the data was to link the simpler source
-                data model to the more complex target data model, matching attributes and values.
-            </p>
-
-            <h3 class="subsection">Mapping table</h3>
-
-            <p>
-                In order to visualize the attributes needed from the target data model and the corresponding attributes
-                in the source data model, a mapping table was created starting from the EULF - Energy Pilot - UC1
-                <a href="http://inspire-sandbox.jrc.ec.europa.eu/energy-pilot/use-case-1/data-models/uml-html-viewer/"
-                   target="_blank">uml model</a>.
-            </p>
-            <p>
-                The process of compiling the map was based on two steps.
-            </p>
-            <p>
-                Firstly we were asked to transform the entities described in the uml to a table adding the relevant
-                attributes (e.g. the voidability, the cardinality, the type of the value). Particular attention had to
-                be given to the type of the attributes, which can be a primitive (e.g. integer, string, etc), a
-                codelist, that is a fixed list of possible values, or another attribute table.
-            </p>
-            <p>
-                The second step was to associate all the attributes of the source model that had a corresponding
-                one in the target.
-            </p>
-
-            <iframe class="frame" width="100%" height="425px" frameborder="0" scrolling="no"
-                    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTViwlTrcL67haILPMTDiafzfS7NlYNzaIebv6X_PL3Pd6EMDQmA89h-m-6Gu4EQVTup_gXGfm3-C4q/pubhtml?gid=1817880787&amp;single=true&amp;widget=true&amp;headers=false">
-            </iframe>
-
-            <p class="text-center">
-                <a href="https://docs.google.com/spreadsheets/d/1zGe3owtIzfCs3iwxZxDxV01D-NqjVXPEw7LBqcNwVbs/edit#gid=1817880787"
-                   target="_blank">
-                    Open in Google Spreadsheet
-                </a>
-            </p>
-
-            <h3 class="subsection">Hale Studio</h3>
-
-            <p>
-                Based on the mapping table, we were able to perform the
-                transformation using <a href="https://www.wetransform.to/products/halestudio/" target="_blank">Hale
-                Studio</a>, an open source data transformation software.
-            </p>
-            <p>
-                As a preliminary operation we imported the source and the target schema as well as the source data in
-                order to have a live validation of the work. We also imported all the
-                <a href="http://inspire-sandbox.jrc.ec.europa.eu/codelist" target="_blank">codelists</a>
-                from the INSPIRE website.
-            </p>
-            <p>
-                Once we had all the needed data in hand we connected the two schemas with a <i>Retype</i> function.
-                After that, using various relations, we joined the attributes of the two tables.
-            </p>
-            <ul>
-                <li>
-                    We used <i>Rename</i> when the source and the target attributes were semantically equal.
-                </li>
-                <li>
-                    The <i>Classification</i> function was instead used when we needed to move from a multiple boolean
-                    attribute in the source to a unique attribute in the target. This type of transformation is based on
-                    a
-                    codelist, and the Classification allowed us to link a true value in the source to the corresponding
-                    value
-                    in the codelist.
-                </li>
-                <li>
-                    We used <i>Assign</i> to put a value in the target schema that was not present in the source but was
-                    known for all the table.
-                    A slightly different version of the function, <i>Assign(Bound)</i> was also used in order to deal
-                    with
-                    the attributes containing some null values.
-                </li>
-                <li>
-                    <i>Formatted string</i> was used when we had to join multiple source attributes in one target
-                    attribute.
-                </li>
-                <li>
-                    Finally, in order to assign a unique id to the sub-table we used <i>Generate Unique Id</i> or <i>Generate
-                    Sequential Id</i>.
-                </li>
-            </ul>
-            <p>
-                Once all the attributes had been linked, we performed a validation of the final schema using both a
-                <i>project validator</i> and an <i>XML validator</i>.
-                <br>
-                The validation highlighted no errors, but only a couple of warnings related to the fact that we added
-                some custom values to a few codelists to better fit the
-                source data.
-            </p>
-            <p>
-                The Hale project and the final .GML (Geography Markup Language) output can be downloaded
-                <a href="download.html" target="_blank">here</a>.
-
-            </p>
-
-
-            <div class="card screenshot">
-                <a target="_blank" href="hale_screenshot.png">
-                    <img src="hale_screenshot.png" class="card-img-top">
-                </a>
-            </div>
-
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <h2>The Web GIS</h2>
-                        <div class="line-shape"></div>
-                    </div>
-                </div>
-            </div>
-
-            <p>
-                The last part of the project consisted of creating a WebGIS to visualize the transformed data along with
-                various basemaps and ancillary datasets related to the energy topic, all published as WMS or WFS on
-                <a href="http://ows3.como.polimi.it:8080/geoserver/web/" target="_blank">GeoServer</a>.
-            </p>
-            <p>
-                Using <a href="https://openlayers.org/" target="_blank">OpenLayers</a> we set up a
-                <a href="webgis.html" target="_blank">WebGIS</a> which shows a visualization of:
-            </p>
-            <ul>
-                <li>
-                    The original CENED dataset, consisting of a selection of 103 buildings in the centre of Sondrio,
-                    provided as WFS. This allows the user to get some information about the building by clicking on
-                    the corresponding point. The information showed are about the address of the building (field <i>INDIRIZZO</i>),
-                    the id of the certificate (field <i>COD_APE</i>), the energetic class and in some cases the proposed
-                    one (fields <i>CLASSE_EN</i> and <i>RIQ_CLASSE</i>).
-                </li>
-                <li>
-                    The boundaries of the municipality and of the province of Sondrio in 2016 taken from the
-                    <a href="https://www.istat.it/it/archivio/124086" target="_blank">ISTAT</a>
-                    (Istituto Italiano di Statistica Italian Institute of Statistics) Website.
-                </li>
-                <li>
-                    The building footprint cut in the center area of Sondrio taken from the the
-                    <a href="http://www.geoportale.regione.lombardia.it/en" target="_blank">Lombardy Region
-                        Geoportal</a>
-                    Website named <i>Database Topografico - Edificato</i>.
-                </li>
-                <li>
-                    Finally, as ancillary layers one can find the dams, the hydraulic regulation works and the
-                    geothermal
-                    plants in the area of Sondrio. The choice had fallen upon those constructions because they either
-                    provide or have the potential to provide electric or heat energy for housing. This data are
-                    from the Lombardy Geoportal Region too.
-                </li>
-            </ul>
-            <p>
-                The map is completed by the CENED dataset of Lecco and a choice of four different basemaps:
-            </p>
-            <ul>
-                <li>OpenStreetMap (OSM);</li>
-                <li>Bing Maps - Roads;</li>
-                <li>Bing Maps - Aerial with labels;</li>
-                <li>Stamen toner.</li>
-            </ul>
-
-        </div>
-
-    </div>
-
-</div>
-
-<!-- Main technologies -->
-<section class="section-padding">
-
-    <div class="container">
-
-        <!-- Title -->
-        <div class="row">
-            <div class="col-12">
-                <div class="section-heading text-center">
-                    <h2>Main Technologies</h2>
-                    <div class="line-shape"></div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Technologies -->
-        <div class="row tech-row">
-
-            <div class="col-3">
-                <div class="tech" id="qgis">
-                    <div class="tech-icon">
-                        <img src="icon_qgis.png">
-                    </div>
-                    <h4>qGIS</h4>
-                </div>
-            </div>
-
-            <div class="col-3">
-                <div class="tech" id="geoserver">
-                    <div class="tech-icon">
-                        <img src="icon_geoserver.png">
-                    </div>
-                    <h4>GeoServer</h4>
-                </div>
-            </div>
-
-            <div class="col-3">
-                <div class="tech" id="openlayers">
-                    <div class="tech-icon">
-                        <img src="icon_openlayers.png">
-                    </div>
-                    <h4>OpenLayers</h4>
-                </div>
-            </div>
-
-            <div class="col-3">
-                <div class="tech" id="hale">
-                    <div class="tech-icon">
-                        <img src="icon_halestudio.png">
-                    </div>
-                    <h4>Hale Studio</h4>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="text technology-text"></div>
-
-    </div>
+<section class="nav-menu fixed-top">
+	
+	<div class="container">
+		
+		<div class="row">
+			
+			<div class="col-md-12">
+				
+				<nav class="navbar navbar-dark navbar-expand-md">
+					
+					<a class="navbar-brand" href="../index.html">GIS Project <span>01</span></a>
+					
+					<button class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+					
+					<div class="collapse navbar-collapse" id="navbar">
+						
+						<ul class="navbar-nav ml-auto">
+							
+							<li class="nav-item">
+								<a class="nav-link" href="../index.html">HOME</a>
+							</li>
+							
+							<li class="nav-item">
+								<a class="nav-link active" href="#">PROJECT<span class="sr-only">(current)</span></a>
+							</li>
+							
+							<li class="nav-item">
+								<a class="nav-link" href="#">WEBGIS</a>
+							</li>
+							
+							<li class="nav-item">
+								<a class="nav-link" href="#">DOWNLOAD</a>
+							</li>
+							
+							<li class="nav-item">
+								<a class="nav-link" href="#">ABOUT US</a>
+							</li>
+						
+						</ul>
+					
+					</div>
+				
+				</nav>
+			
+			</div>
+		
+		</div>
+	
+	</div>
 
 </section>
 
+
+<header class="header-bg">
+	
+	<div class="container header-content">
+		
+		<h1>The Project</h1>
+		<div class="line-shape-heading"></div>
+	
+	</div>
+
+</header>
+
+
+<!-- Project description -->
+<!--<div class="section-padding">-->
+<!--	-->
+<!--	<div class="container">-->
+<!--		-->
+<!--		<div class="text">-->
+<!--			-->
+<!--			<div class="row">-->
+<!--				<div class="col-12">-->
+<!--					<div class="section-heading first-heading text-center">-->
+<!--						<h2>Introduction</h2>-->
+<!--						<div class="line-shape"></div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			-->
+<!--			<p>-->
+<!--				The work presented in this website is part of a project called-->
+<!--				<a href="http://www.gicases.eu/" target="_blank">giCASES</a> whose objective is to create a-->
+<!--				University-Enterprise Alliance for a Spatially Enabled Society.-->
+<!--			</p>-->
+<!--			<p>-->
+<!--				This Knowledge Alliance is co-funded by the-->
+<!--				<a href="http://www.erasmusplus.it/" target="_blank">Erasmus+</a> programme of the European Union that-->
+<!--				involves-->
+<!--				various European universities – and Politecnico di Milano among them - with the purpose of reducing the-->
+<!--				gap between the knowledge students obtain while studying and the knowledge required once they start-->
+<!--				working. The idea is that this goal can be achieved through a collaboration with relevant companies-->
+<!--				presenting real life cases for the students to solve.-->
+<!--			</p>-->
+<!--			<p>-->
+<!--				For this project, the students of the Geographic Information System course of professor Brovelli teamed-->
+<!--				up with <a href="https://www.epsilon-italia.it/" target="_blank">Epsilon Italia</a> to develop the case-->
+<!--				study <a href="https://inspire.ec.europa.eu/sites/default/files/presentations/02_gicases_case_study.pdf"-->
+<!--						 target="_blank">CS5 - Harmonizing data flows in Energy Saving EU policies.</a>-->
+<!--			</p>-->
+<!--			-->
+<!--			<div class="row">-->
+<!--				<div class="col-12">-->
+<!--					<div class="section-heading text-center">-->
+<!--						<h2>INSPIRE</h2>-->
+<!--						<div class="line-shape"></div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			-->
+<!--			<p>-->
+<!--				The cornerstone of the project is the-->
+<!--				<a href="https://inspire.ec.europa.eu/" target="_blank">INSPIRE</a>-->
+<!--				Directive with a focus on how states of the European Union are required to transform their data into an-->
+<!--				INSPIRE compliant format.-->
+<!--			</p>-->
+<!--			<p>-->
+<!--				This will lead to the creation of a common spatial data infrastructure, enabling the sharing of spatial-->
+<!--				information between organisations and countries all over Europe and assisting them in policy-making-->
+<!--				across boundaries.-->
+<!--			</p>-->
+<!--			-->
+<!--			-->
+<!--			<div class="row">-->
+<!--				<div class="col-12">-->
+<!--					<div class="section-heading text-center">-->
+<!--						<h2>The work</h2>-->
+<!--						<div class="line-shape"></div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			-->
+<!--			<p>-->
+<!--				The main goal of the project was to harmonize data flows related to energy saving policies for buildings-->
+<!--				located in the centre of <a href="https://en.wikipedia.org/wiki/Sondrio" target="_blank">Sondrio</a>,-->
+<!--				one of the provincial capitals of Lombardy region in Italy.-->
+<!--			</p>-->
+<!--			<p>-->
+<!--				In particular, the two objectives of the work were:-->
+<!--			</p>-->
+<!--			<ul>-->
+<!--				<li>perform a transformation of the <a href="http://www.cened.it/home" target="_blank">CENED</a>-->
+<!--					(Certificazione ENergetica degli EDifici) dataset according to the extended INSPIRE Building 2D core-->
+<!--					data model;-->
+<!--				</li>-->
+<!--				<li>-->
+<!--					show the CENED dataset of Sondrio together with additional ancillary information using a WebGIS.-->
+<!--				</li>-->
+<!--			</ul>-->
+<!--			-->
+<!--			-->
+<!--			<div class="row">-->
+<!--				<div class="col-12">-->
+<!--					<div class="section-heading text-center">-->
+<!--						<h2>The data pre-processing </h2>-->
+<!--						<div class="line-shape"></div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			-->
+<!--			<p>-->
+<!--				Before starting the actual work, an understanding of the main goal of the INSPIRE Directive and the-->
+<!--				study of both the source data model and sets given from CENED and the target data model and schema from-->
+<!--				INSPIRE were required.-->
+<!--			</p>-->
+<!--			<p>-->
+<!--				CENED data are <a href="http://www.cened.it/opendata_cenedplus2" target="_blank">downloadable</a>-->
+<!--				in csv format for the whole region of Lombardy. With the csv in hand, we imported the-->
+<!--				data in <a href="https://www.qgis.org/it/site/" target="_blank">QGIS</a> to visualize and correctly-->
+<!--				georeference them.-->
+<!--			</p>-->
+<!--			<p>-->
+<!--				For the following operations we needed about 100 point features, so we cut the dataset using a-->
+<!--				rectangular bounding box centered on our main city (Sondrio).-->
+<!--				<br>-->
+<!--				We obtained a bit more than 100 points and we saved them as shape file, downloadable-->
+<!--				<a href="download.html" target="_blank">here</a>.-->
+<!--			</p>-->
+<!--			-->
+<!--			<div class="frame">-->
+<!--				<iframe width="100%" title="Database CENED+2 - Certificazione ENergetica degli EDifici" height="425px"-->
+<!--						src="https://www.dati.lombardia.it/w/bbky-sde5/a5ui-s7tq?cur=X-rnP0zZ4a-&from=6H1VHQWrw6g"-->
+<!--						frameborder="0" scrolling="no">-->
+<!--					-->
+<!--					<a href="https://www.dati.lombardia.it/Energia/Database-CENED-2-Certificazione-ENergetica-degli-E/bbky-sde5"-->
+<!--					   title="Database CENED+2 - Certificazione ENergetica degli EDifici" target="_blank">-->
+<!--						Database CENED+2 - Certificazione ENergetica degli EDifici-->
+<!--					</a>-->
+<!--				-->
+<!--				</iframe>-->
+<!--				-->
+<!--				<p class="text-center"><a href="http://www.socrata.com/" target="_blank">Powered by Socrata</a></p>-->
+<!--			-->
+<!--			</div>-->
+<!--			-->
+<!--			<div class="row">-->
+<!--				<div class="col-12">-->
+<!--					<div class="section-heading text-center">-->
+<!--						<h2>The transformation</h2>-->
+<!--						<div class="line-shape"></div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			-->
+<!--			<p>-->
+<!--				Once this knowledge was acquired, the first step in harmonizing the data was to link the simpler source-->
+<!--				data model to the more complex target data model, matching attributes and values.-->
+<!--			</p>-->
+<!--			-->
+<!--			<h3 class="subsection">Mapping table</h3>-->
+<!--			-->
+<!--			<p>-->
+<!--				In order to visualize the attributes needed from the target data model and the corresponding attributes-->
+<!--				in the source data model, a mapping table was created starting from the EULF - Energy Pilot - UC1-->
+<!--				<a href="http://inspire-sandbox.jrc.ec.europa.eu/energy-pilot/use-case-1/data-models/uml-html-viewer/"-->
+<!--				   target="_blank">uml model</a>.-->
+<!--			</p>-->
+<!--			<p>-->
+<!--				The process of compiling the map was based on two steps.-->
+<!--			</p>-->
+<!--			<p>-->
+<!--				Firstly we were asked to transform the entities described in the uml to a table adding the relevant-->
+<!--				attributes (e.g. the voidability, the cardinality, the type of the value). Particular attention had to-->
+<!--				be given to the type of the attributes, which can be a primitive (e.g. integer, string, etc), a-->
+<!--				codelist, that is a fixed list of possible values, or another attribute table.-->
+<!--			</p>-->
+<!--			<p>-->
+<!--				The second step was to associate all the attributes of the source model that had a corresponding-->
+<!--				one in the target.-->
+<!--			</p>-->
+<!--			-->
+<!--			<iframe class="frame" width="100%" height="425px" frameborder="0" scrolling="no"-->
+<!--					src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTViwlTrcL67haILPMTDiafzfS7NlYNzaIebv6X_PL3Pd6EMDQmA89h-m-6Gu4EQVTup_gXGfm3-C4q/pubhtml?gid=1817880787&amp;single=true&amp;widget=true&amp;headers=false">-->
+<!--			</iframe>-->
+<!--			-->
+<!--			<p class="text-center">-->
+<!--				<a href="https://docs.google.com/spreadsheets/d/1zGe3owtIzfCs3iwxZxDxV01D-NqjVXPEw7LBqcNwVbs/edit#gid=1817880787"-->
+<!--				   target="_blank">-->
+<!--					Open in Google Spreadsheet-->
+<!--				</a>-->
+<!--			</p>-->
+<!--			-->
+<!--			<h3 class="subsection">Hale Studio</h3>-->
+<!--			-->
+<!--			<p>-->
+<!--				Based on the mapping table, we were able to perform the-->
+<!--				transformation using <a href="https://www.wetransform.to/products/halestudio/" target="_blank">Hale-->
+<!--				Studio</a>, an open source data transformation software.-->
+<!--			</p>-->
+<!--			<p>-->
+<!--				As a preliminary operation we imported the source and the target schema as well as the source data in-->
+<!--				order to have a live validation of the work. We also imported all the-->
+<!--				<a href="http://inspire-sandbox.jrc.ec.europa.eu/codelist" target="_blank">codelists</a>-->
+<!--				from the INSPIRE website.-->
+<!--			</p>-->
+<!--			<p>-->
+<!--				Once we had all the needed data in hand we connected the two schemas with a <i>Retype</i> function.-->
+<!--				After that, using various relations, we joined the attributes of the two tables.-->
+<!--			</p>-->
+<!--			<ul>-->
+<!--				<li>-->
+<!--					We used <i>Rename</i> when the source and the target attributes were semantically equal.-->
+<!--				</li>-->
+<!--				<li>-->
+<!--					The <i>Classification</i> function was instead used when we needed to move from a multiple boolean-->
+<!--					attribute in the source to a unique attribute in the target. This type of transformation is based on-->
+<!--					a-->
+<!--					codelist, and the Classification allowed us to link a true value in the source to the corresponding-->
+<!--					value-->
+<!--					in the codelist.-->
+<!--				</li>-->
+<!--				<li>-->
+<!--					We used <i>Assign</i> to put a value in the target schema that was not present in the source but was-->
+<!--					known for all the table.-->
+<!--					A slightly different version of the function, <i>Assign(Bound)</i> was also used in order to deal-->
+<!--					with-->
+<!--					the attributes containing some null values.-->
+<!--				</li>-->
+<!--				<li>-->
+<!--					<i>Formatted string</i> was used when we had to join multiple source attributes in one target-->
+<!--					attribute.-->
+<!--				</li>-->
+<!--				<li>-->
+<!--					Finally, in order to assign a unique id to the sub-table we used <i>Generate Unique Id</i> or <i>Generate-->
+<!--					Sequential Id</i>.-->
+<!--				</li>-->
+<!--			</ul>-->
+<!--			<p>-->
+<!--				Once all the attributes had been linked, we performed a validation of the final schema using both a-->
+<!--				<i>project validator</i> and an <i>XML validator</i>.-->
+<!--				<br>-->
+<!--				The validation highlighted no errors, but only a couple of warnings related to the fact that we added-->
+<!--				some custom values to a few codelists to better fit the-->
+<!--				source data.-->
+<!--			</p>-->
+<!--			<p>-->
+<!--				The Hale project and the final .GML (Geography Markup Language) output can be downloaded-->
+<!--				<a href="download.html" target="_blank">here</a>.-->
+<!--			-->
+<!--			</p>-->
+<!--			-->
+<!--			-->
+<!--			<div class="card screenshot">-->
+<!--				<a target="_blank" href="hale_screenshot.png">-->
+<!--					<img src="hale_screenshot.png" class="card-img-top">-->
+<!--				</a>-->
+<!--			</div>-->
+<!--			-->
+<!--			-->
+<!--			<div class="row">-->
+<!--				<div class="col-12">-->
+<!--					<div class="section-heading text-center">-->
+<!--						<h2>The Web GIS</h2>-->
+<!--						<div class="line-shape"></div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			-->
+<!--			<p>-->
+<!--				The last part of the project consisted of creating a WebGIS to visualize the transformed data along with-->
+<!--				various basemaps and ancillary datasets related to the energy topic, all published as WMS or WFS on-->
+<!--				<a href="http://ows3.como.polimi.it:8080/geoserver/web/" target="_blank">GeoServer</a>.-->
+<!--			</p>-->
+<!--			<p>-->
+<!--				Using <a href="https://openlayers.org/" target="_blank">OpenLayers</a> we set up a-->
+<!--				<a href="webgis.html" target="_blank">WebGIS</a> which shows a visualization of:-->
+<!--			</p>-->
+<!--			<ul>-->
+<!--				<li>-->
+<!--					The original CENED dataset, consisting of a selection of 103 buildings in the centre of Sondrio,-->
+<!--					provided as WFS. This allows the user to get some information about the building by clicking on-->
+<!--					the corresponding point. The information showed are about the address of the building (field <i>INDIRIZZO</i>),-->
+<!--					the id of the certificate (field <i>COD_APE</i>), the energetic class and in some cases the proposed-->
+<!--					one (fields <i>CLASSE_EN</i> and <i>RIQ_CLASSE</i>).-->
+<!--				</li>-->
+<!--				<li>-->
+<!--					The boundaries of the municipality and of the province of Sondrio in 2016 taken from the-->
+<!--					<a href="https://www.istat.it/it/archivio/124086" target="_blank">ISTAT</a>-->
+<!--					(Istituto Italiano di Statistica Italian Institute of Statistics) Website.-->
+<!--				</li>-->
+<!--				<li>-->
+<!--					The building footprint cut in the center area of Sondrio taken from the the-->
+<!--					<a href="http://www.geoportale.regione.lombardia.it/en" target="_blank">Lombardy Region-->
+<!--						Geoportal</a>-->
+<!--					Website named <i>Database Topografico - Edificato</i>.-->
+<!--				</li>-->
+<!--				<li>-->
+<!--					Finally, as ancillary layers one can find the dams, the hydraulic regulation works and the-->
+<!--					geothermal-->
+<!--					plants in the area of Sondrio. The choice had fallen upon those constructions because they either-->
+<!--					provide or have the potential to provide electric or heat energy for housing. This data are-->
+<!--					from the Lombardy Geoportal Region too.-->
+<!--				</li>-->
+<!--			</ul>-->
+<!--			<p>-->
+<!--				The map is completed by the CENED dataset of Lecco and a choice of four different basemaps:-->
+<!--			</p>-->
+<!--			<ul>-->
+<!--				<li>OpenStreetMap (OSM);</li>-->
+<!--				<li>Bing Maps - Roads;</li>-->
+<!--				<li>Bing Maps - Aerial with labels;</li>-->
+<!--				<li>Stamen toner.</li>-->
+<!--			</ul>-->
+<!--		-->
+<!--		</div>-->
+<!--	-->
+<!--	</div>-->
+
+<!--</div>-->
+
+<!-- Main technologies -->
+<!--<section class="section-padding">-->
+<!--	-->
+<!--	<div class="container">-->
+<!--		-->
+<!--		&lt;!&ndash; Title &ndash;&gt;-->
+<!--		<div class="row">-->
+<!--			<div class="col-12">-->
+<!--				<div class="section-heading text-center">-->
+<!--					<h2>Main Technologies</h2>-->
+<!--					<div class="line-shape"></div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--		-->
+<!--		-->
+<!--		&lt;!&ndash; Technologies &ndash;&gt;-->
+<!--		<div class="row tech-row">-->
+<!--			-->
+<!--			<div class="col-3">-->
+<!--				<div class="tech" id="qgis">-->
+<!--					<div class="tech-icon">-->
+<!--						<img src="icon_qgis.png">-->
+<!--					</div>-->
+<!--					<h4>qGIS</h4>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			-->
+<!--			<div class="col-3">-->
+<!--				<div class="tech" id="geoserver">-->
+<!--					<div class="tech-icon">-->
+<!--						<img src="icon_geoserver.png">-->
+<!--					</div>-->
+<!--					<h4>GeoServer</h4>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			-->
+<!--			<div class="col-3">-->
+<!--				<div class="tech" id="openlayers">-->
+<!--					<div class="tech-icon">-->
+<!--						<img src="icon_openlayers.png">-->
+<!--					</div>-->
+<!--					<h4>OpenLayers</h4>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			-->
+<!--			<div class="col-3">-->
+<!--				<div class="tech" id="hale">-->
+<!--					<div class="tech-icon">-->
+<!--						<img src="icon_halestudio.png">-->
+<!--					</div>-->
+<!--					<h4>Hale Studio</h4>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		-->
+<!--		</div>-->
+<!--		-->
+<!--		<div class="text technology-text"></div>-->
+<!--	-->
+<!--	</div>-->
+
+<!--</section>-->
+
 <!-- Footer -->
 <footer class="footer-bg">
-
-    <div class="container">
-
-        <h3>Politecnico di Milano</h3>
-
-        <!-- Contacts -->
-        <div class="row contacts">
-
-            <!-- Address -->
-            <div class="col-md-4 col-12">
-
-                <i class="fa fa-location-arrow text-white"></i>
-                <p class="contact">Piazza Leonardo da Vinci, 32<br>20133 Milano</p>
-
-            </div>
-
-            <!-- Site -->
-            <div class="col-md-4 col-12 mt-md-0 mt-4">
-
-                <i class="fa fa-link text-white"></i>
-                <p class="contact"><a href="https://www.polimi.it/" target="_blank">https://www.polimi.it/</a></p>
-
-            </div>
-
-            <!-- Phone -->
-            <div class="col-md-4 col-12 mt-md-0 mt-4 mb-md-0 mb-3">
-
-                <i class="fa fa-phone text-white"></i>
-                <p class="contact">+39 02 23991</p>
-
-            </div>
-
-        </div>
-
-        <!-- Social links -->
-        <div class="row socials">
-
-            <div class="col-12">
-
-                <a href="https://www.facebook.com/polimi" target="_blank"><i class="fab fa-facebook-square"></i></a>
-
-                <a href="https://twitter.com/polimi" target="_blank"><i class="fab fa-twitter-square"></i></a>
-
-                <a href="https://www.linkedin.com/school/politecnico-di-milano/" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-
-                <a href="https://www.instagram.com/polimi/" target="_blank"><i class="fab fa-instagram"></i></a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- Copyright bar -->
-    <div class="container-fluid">
-
-        <div class="row copyright">
-
-            <div class="col-12">
-
-                <i class="far fa-copyright"></i> 2018 Politecnico di Milano. All rights reserved.
-
-            </div>
-
-        </div>
-
-    </div>
+	
+	<div class="container">
+		
+		<h3>Politecnico di Milano</h3>
+		
+		<!-- Contacts -->
+		<div class="row contacts">
+			
+			<!-- Address -->
+			<div class="col-md-4 col-12">
+				
+				<i class="fa fa-location-arrow text-white"></i>
+				<p class="contact">Piazza Leonardo da Vinci, 32<br>20133 Milano</p>
+			
+			</div>
+			
+			<!-- Site -->
+			<div class="col-md-4 col-12 mt-md-0 mt-4">
+				
+				<i class="fa fa-link text-white"></i>
+				<p class="contact"><a href="https://www.polimi.it/" target="_blank">https://www.polimi.it/</a></p>
+			
+			</div>
+			
+			<!-- Phone -->
+			<div class="col-md-4 col-12 mt-md-0 mt-4 mb-md-0 mb-3">
+				
+				<i class="fa fa-phone text-white"></i>
+				<p class="contact">+39 02 23991</p>
+			
+			</div>
+		
+		</div>
+		
+		<!-- Social links -->
+		<div class="row socials">
+			
+			<div class="col-12">
+				
+				<a href="https://www.facebook.com/polimi" target="_blank"><i class="fab fa-facebook-square"></i></a>
+				
+				<a href="https://twitter.com/polimi" target="_blank"><i class="fab fa-twitter-square"></i></a>
+				
+				<a href="https://www.linkedin.com/school/politecnico-di-milano/" target="_blank">
+					<i class="fab fa-linkedin"></i>
+				</a>
+				
+				<a href="https://www.instagram.com/polimi/" target="_blank"><i class="fab fa-instagram"></i></a>
+			
+			</div>
+		
+		</div>
+	
+	</div>
+	
+	<!-- Copyright bar -->
+	<div class="container-fluid">
+		
+		<div class="row copyright">
+			
+			<div class="col-12">
+				
+				<i class="far fa-copyright"></i> 2018 Politecnico di Milano. All rights reserved.
+			
+			</div>
+		
+		</div>
+	
+	</div>
 
 </footer>
 
 
-<!-- jQuery 3.3.1 -->
-<script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous">
-</script>
-
-<!-- Bootstrap 4.1.1 -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
-        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-        crossorigin="anonymous">
-</script>
-
-<!-- Main JS-->
-<script src="project.js" type="text/javascript"></script>
-<script src="navbar.js" type="text/javascript"></script>
+<script src="../scripts/project.js" type="text/javascript"></script>
 
 </body>
 
