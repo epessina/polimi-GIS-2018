@@ -1,12 +1,10 @@
 .header-bg {
-    height     : 300px;
     background : #134E5E;
-    background : -webkit-linear-gradient(to right, #71B280, #134E5E);
     background : linear-gradient(to right, #71B280, #134E5E);
 }
 
 .header-content {
-    margin-top : 45px;
+    padding : 100px 0;
     text-align : center;
 }
 

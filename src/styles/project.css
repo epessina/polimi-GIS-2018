@@ -1,3 +1,92 @@
 @import "../../node_modules/normalize.css/normalize.css";
 @import "global.css";
+
 @import "./components/nav.css";
+@import "./components/page-header.css";
+
+
+.text p, ul {
+    font-size  : 20px;
+    text-align : justify;
+}
+
+.text li { margin : 0 0 10px 0 }
+
+.text .section-heading {margin-bottom : 50px }
+
+.text .section-heading:not(.first-heading) { margin-top : 100px }
+
+.text a {
+    font-weight : 500;
+    color       : #009688;
+}
+
+
+.subsection {
+    font-weight : 400;
+    margin      : 70px 0 15px 0;
+    text-align  : center;
+}
+
+
+.frame { margin-top : 40px }
+
+
+.screenshot {
+    width  : 50%;
+    margin : 40px auto;
+}
+
+.screenshot img:hover {
+    cursor     : pointer;
+    box-shadow : 0 0 2px 1px rgba(0, 150, 136, .5);
+}
+
+
+.tech-row { padding-bottom : 70px }
+
+.tech {
+    transition : 0.3s;
+    transform  : translateY(0);
+    text-align : center;
+}
+
+.tech:hover { cursor : pointer }
+
+.selected-tech { transform : translateY(-5px) }
+
+.tech .tech-icon {
+    height        : 70px;
+    margin-bottom : 30px;
+}
+
+.tech .tech-icon img {
+    -webkit-transition : 0.3s;
+    transition         : 0.3s;
+    filter             : grayscale(100%);
+}
+
+.selected-tech .tech-icon img { filter : grayscale(0) }
+
+.tech h4 {
+    margin-bottom  : 0;
+    text-transform : uppercase;
+}
+
+.tech a { color : black }
+
+.technology-text { min-height : 150px }
+
+@media screen and (max-width : 991px) {
+
+    .tech h4 { font-size : 20px }
+
+}
+
+@media screen and (max-width : 767px) {
+
+    .tech h4 { font-size : 15px }
+
+    .tech-row { padding-bottom : 50px }
+
+}
