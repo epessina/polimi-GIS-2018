@@ -1,14 +1,152 @@
-/*!
-GIS Project 2018
-Group 1: Pessina Edoardo, Stucchi Lorenzo, Vestgaard Mathias
- */
+import $ from "jquery"
+import "bootstrap"
+import "bootstrap/dist/css/bootstrap.min.css"
+
+import 'ol/ol.css';
+import 'ol-layerswitcher/src/ol-layerswitcher.css'
+
+import { Map, View, Overlay } from 'ol';
+import TileLayer from 'ol/layer/Tile';
+import LayerGroup from "ol/layer/Group";
+import { fromLonLat } from 'ol/proj';
+import OSM from 'ol/source/OSM';
+import Stamen from "ol/source/Stamen";
+import BingMaps from "ol/source/BingMaps";
+import { defaults } from 'ol/control';
+import LayerSwitcher from "ol-layerswitcher/dist/ol-layerswitcher";
+import { Vector } from 'ol/source';
+import { GeoJSON } from 'ol/format';
+import VectorLayer from 'ol/layer/Vector';
+import Style from "ol/style/Style";
+import RegularShape from "ol/style/RegularShape";
+import Fill from "ol/style/Fill";
+import Stroke from "ol/style/Stroke";
+
+import nav from "../scripts/navbar";
+import ScaleLine from "ol/control/ScaleLine";
+import FullScreen from "ol/control/FullScreen";
+import OverviewMap from "ol/control/OverviewMap";
+import MousePosition from "ol/control/MousePosition";
+import { createStringXY } from "ol/coordinate";
+
+
+/** Key for accessing the Bing maps. */
+const BING_KEY = "AgyifPDfXg47i2reCsF1jUuyudaxgUWbN93sYLchBznYvbX8snt9RJZBx2BmmPZq";
+
+
+$(() => {
+
+    // Initialize the navigation bar
+    nav();
+
+    // Initialize the map
+    initMap();
+
+});
+
+
+/** Initializes the map. */
+function initMap() {
+
+    // Array of basemaps
+    const baseMaps = [
+        new TileLayer({
+            title  : "Bing Maps - Aerial with Labels",
+            type   : "base",
+            visible: false,
+            source : new BingMaps({ key: BING_KEY, imagerySet: "AerialWithLabels" })
+        }),
+        new TileLayer({
+            title  : "Bing Maps - Roads",
+            type   : "base",
+            visible: false,
+            source : new BingMaps({ key: BING_KEY, imagerySet: "Road" })
+        }),
+        new TileLayer({ title: "Stamen Toner", type: "base", visible: false, source: new Stamen({ layer: "toner" }) }),
+        new TileLayer({ title: "OpenStreetMap", type: "base", visible: true, source: new OSM() }),
+    ];
+
+    // Array of overlay layers
+    const overlayLayers = [
+        new VectorLayer({
+            title : "Cened 2.0+ data (Sondrio)",
+            source: loadSource("Cened_2"),
+            style : new Style({
+                image: new RegularShape({
+                    fill  : new Fill({ color: '#03C7EA' }),
+                    stroke: new Stroke({ color: '#000000', width: 1 }),
+                    points: 8,
+                    radius: 5,
+                    angle : Math.PI
+                })
+            }),
+            maxResolution: 15
+        })
+    ];
+
+
+    // Array of map controls
+    const controls = [
+        new ScaleLine(),
+        new FullScreen(),
+        new OverviewMap(),
+        new LayerSwitcher(),
+        new MousePosition({ coordinateFormat: createStringXY(4), projection: "EPSG:4326" })
+    ];
+
+
+    // Map object
+    const map = new Map({
+        target  : "map",
+        layers  : [
+            new LayerGroup({ title: "Basemaps", layers: baseMaps }),
+            new LayerGroup({ title: "Overlay Layers", layers: overlayLayers }),
+        ],
+        view    : new View({ center: fromLonLat([9.87405, 46.16944]), zoom: 16 }),
+        controls: defaults().extend(controls)
+    });
+
+
+    // Popup to display the data of the WFS layer
+    map.addOverlay(new Overlay({ element: document.getElementById('popup') }))
+
+
+}
+
 
 /**
- * This file contains the code that manages the WebGIS.
+ * Loads a local GeoJSON file as source for a vector layer.
+ *
+ * @param {string} name - The name of the file
+ * @returns {ol.source.Vector} The vector layer.
  */
+function loadSource(name) {
 
-// Use strict mode to "secure" the script from syntax errors
-"use strict";
+
+    // var features;
+    // jQuery.getJSON("/json/studyCentroids.json", function(data) {
+    //     features = new ol.format.GeoJSON().readFeatures( data );
+    //     alert(features); // success!
+    // });
+    // alert(features); // undefined
+
+
+    return new Vector({ url: `assets/vectors/${name}.geojson`, format: new GeoJSON() })
+
+}
+
+
+// var map = new ol.Map({
+//     layers: [
+//         new ol.layer.Group({
+//             title: 'Overlay Layers',
+//             layers: [province, municipality, point_lecco, building_footprint,
+//                 geothermal, hydraulic, dams, building_point]
+//         })
+//     ],
+// });
+
+
 /*
     Old version
 
@@ -121,86 +259,6 @@ var point_lecco = new ol.layer.Image({
 });
 */
 
-// Loads several basemaps.
-var OSM = new ol.layer.Tile({
-    title: 'OpenStreetMap',
-    type: 'base',
-    visible: true,
-    source: new ol.source.OSM()
-});
-
-var bingRoads = new ol.layer.Tile({
-    title: 'Bing Maps - Roads',
-    type: 'base',
-    visible: false,
-    source: new ol.source.BingMaps({
-        key: 'AgyifPDfXg47i2reCsF1jUuyudaxgUWbN93sYLchBznYvbX8snt9RJZBx2BmmPZq',
-        imagerySet: 'Road'
-    })
-});
-
-var bingAerialWithLabels = new ol.layer.Tile({
-    title: 'Bing Maps - Aerial with Labels',
-    type: 'base',
-    visible: false,
-    source: new ol.source.BingMaps({
-        key: 'AgyifPDfXg47i2reCsF1jUuyudaxgUWbN93sYLchBznYvbX8snt9RJZBx2BmmPZq',
-        imagerySet: 'AerialWithLabels'
-    })
-});
-
-var stamenToner = new ol.layer.Tile({
-    title: 'Stamen Toner',
-    type: 'base',
-    visible: false,
-    source: new ol.source.Stamen({
-        layer: 'toner'
-    })
-});
-
-// Creates the map object, adds the basemaps and the layers, sets the default view and the controls.
-var map = new ol.Map({
-    target: document.getElementById('map'),
-    layers: [
-        new ol.layer.Group({
-            title: 'Basemaps',
-            layers: [stamenToner, bingAerialWithLabels, bingRoads, OSM]
-        }),
-        /*
-        new ol.layer.Group({
-            title: 'Overlay Layers',
-            layers: [province, municipality, point_lecco, building_footprint,
-                geothermal, hydraulic, dams, building_point]
-        })*/
-    ],
-    view: new ol.View({
-        center: ol.proj.fromLonLat([9.87405, 46.16944]),
-        zoom: 16
-    }),
-    controls: ol.control.defaults().extend([
-        new ol.control.ScaleLine(),
-        new ol.control.FullScreen(),
-        new ol.control.OverviewMap(),
-        new ol.control.MousePosition({
-            coordinateFormat: ol.coordinate.createStringXY(4),
-            projection: 'EPSG:4326'
-        })
-    ])
-});
-
-
-// Adds the layer switcher.
-var layerSwitcher = new ol.control.LayerSwitcher({});
-map.addControl(layerSwitcher);
-
-// Creates a popup to display the data of the WFS layer.
-var elementPopup = document.getElementById('popup');
-
-var popup = new ol.Overlay({
-    element: elementPopup
-});
-
-map.addOverlay(popup);
 /*
 map.on('click', function (event) {
     var feature = map.forEachFeatureAtPixel(event.pixel, function (feature, layer) {

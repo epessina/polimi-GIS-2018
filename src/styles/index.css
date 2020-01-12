@@ -1,5 +1,6 @@
 @import "../../node_modules/normalize.css/normalize.css";
-@import "global.css";
+@import "./global.css";
+
 @import "./components/nav.css";
 
 
