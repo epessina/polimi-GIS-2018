@@ -69,9 +69,9 @@ function initMap() {
     // Array of overlay layers
     const overlayLayers = [
         new VectorLayer({
-            title : "Cened 2.0+ data (Sondrio)",
-            source: loadSource("Cened_2"),
-            style : new Style({
+            title        : "Cened 2.0+ data (Sondrio)",
+            source       : loadSource("Cened_2"),
+            style        : new Style({
                 image: new RegularShape({
                     fill  : new Fill({ color: '#03C7EA' }),
                     stroke: new Stroke({ color: '#000000', width: 1 }),
@@ -110,7 +110,6 @@ function initMap() {
     // Popup to display the data of the WFS layer
     map.addOverlay(new Overlay({ element: document.getElementById('popup') }))
 
-
 }
 
 
@@ -118,18 +117,9 @@ function initMap() {
  * Loads a local GeoJSON file as source for a vector layer.
  *
  * @param {string} name - The name of the file
- * @returns {ol.source.Vector} The vector layer.
+ * @returns {Vector} The vector layer.
  */
 function loadSource(name) {
-
-
-    // var features;
-    // jQuery.getJSON("/json/studyCentroids.json", function(data) {
-    //     features = new ol.format.GeoJSON().readFeatures( data );
-    //     alert(features); // success!
-    // });
-    // alert(features); // undefined
-
 
     return new Vector({ url: `assets/vectors/${name}.geojson`, format: new GeoJSON() })
 
